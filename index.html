@@ -1359,7 +1359,7 @@
     .team-rig {
       position: relative;
       margin-top: clamp(2rem, 5vw, 4rem);
-      min-height: clamp(31rem, 44vw, 42rem);
+      min-height: clamp(34rem, 47vw, 45rem);
       perspective: 1300px;
     }
 
@@ -1386,7 +1386,7 @@
       position: absolute;
       left: 0;
       right: 0;
-      bottom: 5.2rem;
+      bottom: 7.8rem;
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(12rem, 18rem);
       align-items: end;
@@ -1429,10 +1429,10 @@
       left: clamp(1rem, 3vw, 2rem);
       top: 0.8rem;
       color: rgba(255,255,255,0.14);
-      font-size: clamp(1.8rem, 5vw, 5rem);
+      font-size: clamp(1.6rem, 4.1vw, 4rem);
       line-height: 1;
       font-weight: 900;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.04em;
       white-space: nowrap;
       pointer-events: none;
     }
@@ -1551,7 +1551,7 @@
 
     .team-wheel {
       position: absolute;
-      bottom: -2.25rem;
+      bottom: 3.25rem;
       width: clamp(4.3rem, 7vw, 6.2rem);
       height: clamp(4.3rem, 7vw, 6.2rem);
       border-radius: 50%;
@@ -1571,17 +1571,19 @@
       position: absolute;
       left: 3%;
       right: 3%;
-      bottom: 0;
+      bottom: 0.35rem;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1px;
       border: 1px solid rgba(255,255,255,0.12);
       background: rgba(255,255,255,0.1);
       backdrop-filter: blur(14px);
+      z-index: 5;
     }
 
     .team-status div {
-      padding: 0.9rem 1rem;
+      min-width: 0;
+      padding: 0.78rem 1rem;
       background: rgba(5,10,22,0.58);
     }
 
@@ -1599,6 +1601,9 @@
       color: var(--muted);
       font-size: 0.72rem;
       line-height: 1.4;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .contact {
@@ -1803,7 +1808,7 @@
 
     .contact-details {
       display: grid;
-      grid-template-columns: minmax(22rem, 1.8fr) minmax(10rem, 0.8fr) minmax(9rem, 0.7fr) minmax(16rem, 1.1fr);
+      grid-template-columns: minmax(26rem, 1.85fr) minmax(10rem, 0.8fr) minmax(9rem, 0.7fr) minmax(16rem, 1.1fr);
       gap: 0.75rem;
       margin: 1.5rem auto 0;
       max-width: 1180px;
@@ -1843,6 +1848,17 @@
       white-space: nowrap;
       font-size: 0.78rem;
       line-height: 1.35;
+    }
+
+    .contact-address span {
+      display: -webkit-box;
+      overflow: hidden;
+      white-space: normal;
+      text-overflow: clip;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      font-size: 0.68rem;
+      line-height: 1.45;
     }
 
     .contact h2 {
@@ -2195,13 +2211,13 @@
       }
 
       .team-road {
-        bottom: 4rem;
+        bottom: 5rem;
       }
 
       .team-wheel {
         width: 3.1rem;
         height: 3.1rem;
-        bottom: 3.1rem;
+        bottom: 4.2rem;
         border-width: 0.55rem;
       }
 
@@ -2211,7 +2227,13 @@
 
       .team-status {
         grid-template-columns: 1fr;
-        bottom: -0.5rem;
+        bottom: -0.15rem;
+      }
+
+      .team-status span {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
       }
 
       .footer-strip {
@@ -2585,7 +2607,7 @@
           <p class="eyebrow" data-reveal data-i18n="contactEyebrow">Contact</p>
           <h2 data-reveal data-i18n="contactTitle">Ready to move smarter?</h2>
           <div class="contact-details">
-            <div class="contact-detail" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="contactAddress">Company address: Crown Bridge Investments, P.O Box No:14519, Al Kharj Road, Riyadh, Kingdom of Saudi Arabia.</span></div>
+            <div class="contact-detail contact-address" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="contactAddress">Crown Bridge Investments, P.O Box No:14519, Al Kharj Road, Riyadh, Kingdom of Saudi Arabia.</span></div>
             <a class="contact-detail" href="tel:+966565652159" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.62 2.61a2 2 0 0 1-.45 2.11L8 9.67a16 16 0 0 0 6.33 6.33l1.23-1.23a2 2 0 0 1 2.11-.45c.84.29 1.71.5 2.61.62A2 2 0 0 1 22 16.92Z"/></svg><span>+966565652159</span></a>
             <a class="contact-detail" href="https://wa.me/966565652159" target="_blank" rel="noopener" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.4-5.1a8.5 8.5 0 1 1 3.2 3.3Z"/><path d="M8.8 8.7c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.6c.1.3.1.5-.1.7l-.4.5c-.1.1-.2.3-.1.5.4.8 1.1 1.6 2.1 2.2.2.1.4.1.5-.1l.6-.7c.2-.2.4-.3.7-.2l1.6.7c.4.2.4.4.4.6 0 .9-.7 1.6-1.7 1.6-2.8 0-6.8-3.4-6.8-6.6 0-.4.1-.7.3-1Z"/></svg><span>WhatsApp</span></a>
             <div class="contact-detail" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-10 6L2 7"/></svg><span>rkk@nexgenlogisolutions.com</span></div>
@@ -2698,7 +2720,7 @@
         teamStatus3: "Live visibility",
         contactEyebrow: "Contact",
         contactTitle: "Ready to move smarter?",
-        contactAddress: "Company address: Crown Bridge Investments, P.O Box No:14519, Al Kharj Road, Riyadh, Kingdom of Saudi Arabia.",
+        contactAddress: "Crown Bridge Investments, P.O Box No:14519, Al Kharj Road, Riyadh, Kingdom of Saudi Arabia.",
         fieldName: "Name",
         fieldEmail: "Email",
         fieldCompany: "Company",
@@ -2773,7 +2795,7 @@
         teamStatus3: "رؤية مباشرة",
         contactEyebrow: "تواصل معنا",
         contactTitle: "جاهز لحركة أذكى؟",
-        contactAddress: "عنوان الشركة: Crown Bridge Investments، ص.ب 14519، طريق الخرج، الرياض، المملكة العربية السعودية.",
+        contactAddress: "Crown Bridge Investments، ص.ب 14519، طريق الخرج، الرياض، المملكة العربية السعودية.",
         fieldName: "الاسم",
         fieldEmail: "البريد الإلكتروني",
         fieldCompany: "الشركة",
