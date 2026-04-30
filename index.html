@@ -1,0 +1,3129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NEXGEN Logistics Solutions - Integrated warehousing and supply chain solutions." />
+  <title>NEXGEN Logistics Solutions</title>
+  <link rel="icon" type="image/png" href="assets/logo-nexgen.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1E2A5A;
+      --blue: #243B6B;
+      --orange: #F05A28;
+      --white: #FFFFFF;
+      --ink: #09101f;
+      --muted: rgba(255, 255, 255, 0.68);
+      --quiet: rgba(255, 255, 255, 0.1);
+      --line: rgba(255, 255, 255, 0.16);
+      --glass: rgba(19, 31, 65, 0.54);
+      --shadow: 0 24px 100px rgba(0, 0, 0, 0.38);
+      --ease: cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--ink);
+      color: var(--white);
+      font-family: "Montserrat", Arial, sans-serif;
+      scroll-behavior: auto;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(240, 90, 40, 0.2), transparent 24rem),
+        radial-gradient(circle at 76% 4%, rgba(36, 59, 107, 0.62), transparent 30rem),
+        linear-gradient(180deg, #071020 0%, #101a37 34%, #0b1122 100%);
+      color: var(--white);
+    }
+
+    body.is-ar {
+      font-family: "Cairo", "Montserrat", Arial, sans-serif;
+    }
+
+    body.is-ar h1,
+    body.is-ar h2,
+    body.is-ar h3,
+    body.is-ar .button,
+    body.is-ar .eyebrow,
+    body.is-ar .nav-links,
+    body.is-ar .service-meta,
+    body.is-ar .counter-label,
+    body.is-ar .footer-strip,
+    body.is-ar .brand-text span {
+      letter-spacing: 0;
+    }
+
+    html[dir="rtl"] .section-heading,
+    html[dir="rtl"] .split,
+    html[dir="rtl"] .infra-grid,
+    html[dir="rtl"] .contact-grid {
+      direction: rtl;
+    }
+
+    html[dir="rtl"] .brand,
+    html[dir="rtl"] .nav-links,
+    html[dir="rtl"] .nav-actions,
+    html[dir="rtl"] .hero-actions,
+    html[dir="rtl"] .ticker,
+    html[dir="rtl"] .logo-track {
+      direction: ltr;
+    }
+
+    body.theme-light {
+      --white: #101831;
+      --muted: rgba(16, 24, 49, 0.7);
+      --ink: #f5f7fb;
+      --shadow: 0 24px 80px rgba(30, 42, 90, 0.16);
+      background:
+        radial-gradient(circle at 18% 12%, rgba(240, 90, 40, 0.14), transparent 24rem),
+        radial-gradient(circle at 76% 4%, rgba(36, 59, 107, 0.14), transparent 30rem),
+        linear-gradient(180deg, #f7f9ff 0%, #edf2fb 46%, #ffffff 100%);
+      color: #101831;
+    }
+
+    body.theme-light .stage-canvas {
+      opacity: 0.46;
+      filter: saturate(0.85) contrast(0.92);
+    }
+
+    body.theme-light .noise-wash {
+      background:
+        linear-gradient(90deg, rgba(247,249,255,0.92) 0%, rgba(247,249,255,0.68) 42%, rgba(247,249,255,0.18) 100%),
+        radial-gradient(circle at 54% 50%, transparent 0, rgba(247,249,255,0.72) 78%);
+    }
+
+    body.theme-light .nav.is-scrolled,
+    body.theme-light .hero-instrument,
+    body.theme-light .visual-frame,
+    body.theme-light .service-card,
+    body.theme-light .counter-panel,
+    body.theme-light .map-panel,
+    body.theme-light .client-logo,
+    body.theme-light .process-stage,
+    body.theme-light .step-card,
+    body.theme-light .team-card,
+    body.theme-light .contact-card,
+    body.theme-light .contact-detail,
+    body.theme-light .floating-panel,
+    body.theme-light .about-point,
+    body.theme-light .social-link {
+      background-color: rgba(255, 255, 255, 0.72);
+      border-color: rgba(30, 42, 90, 0.16);
+      color: #101831;
+    }
+
+    body.theme-light p,
+    body.theme-light .lead,
+    body.theme-light .contact-detail span,
+    body.theme-light .floating-panel span,
+    body.theme-light .holo-label span,
+    body.theme-light .team-info p,
+    body.theme-light .about-point span {
+      color: rgba(16, 24, 49, 0.72);
+    }
+
+    body.theme-light .team-info,
+    body.theme-light .holo-label {
+      background: rgba(255, 255, 255, 0.72);
+      color: #101831;
+    }
+
+    body.theme-light .about,
+    body.theme-light .services,
+    body.theme-light .infrastructure,
+    body.theme-light .clients,
+    body.theme-light .process,
+    body.theme-light .team,
+    body.theme-light .contact {
+      background:
+        radial-gradient(circle at 18% 18%, rgba(240,90,40,0.12), transparent 26rem),
+        linear-gradient(180deg, rgba(247,249,255,0.88), rgba(234,240,252,0.9));
+    }
+
+    body.theme-light .map-panel,
+    body.theme-light .process-stage {
+      background:
+        linear-gradient(90deg, rgba(30,42,90,0.06) 1px, transparent 1px),
+        linear-gradient(rgba(30,42,90,0.06) 1px, transparent 1px),
+        rgba(255,255,255,0.72);
+      background-size: 34px 34px, 34px 34px, auto;
+    }
+
+    body.theme-light .trailer-shell,
+    body.theme-light .team-status,
+    body.theme-light .team-status div {
+      background-color: rgba(255, 255, 255, 0.76);
+      border-color: rgba(30,42,90,0.16);
+    }
+
+    body.theme-light .team-info {
+      background: transparent;
+      color: #101831;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      pointer-events: none;
+      opacity: 0.16;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 78%, transparent);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 21;
+      pointer-events: none;
+      opacity: 0.08;
+      background:
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 5px);
+      mix-blend-mode: overlay;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .stage-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0.98;
+    }
+
+    .site-shell {
+      position: relative;
+      z-index: 2;
+    }
+
+    .noise-wash {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(7, 13, 27, 0.92) 0%, rgba(7, 13, 27, 0.62) 36%, rgba(7, 13, 27, 0.16) 100%),
+        radial-gradient(circle at 54% 50%, transparent 0, rgba(5, 10, 22, 0.68) 78%);
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 1.35rem clamp(1rem, 4vw, 4rem);
+      color: var(--white);
+      transition: background 0.45s var(--ease), border-color 0.45s var(--ease), padding 0.45s var(--ease);
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav.is-scrolled {
+      padding-block: 0.9rem;
+      background: rgba(6, 12, 27, 0.78);
+      border-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 6.9rem;
+      height: 2.65rem;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 0 36px rgba(240,90,40,0.22);
+      clip-path: polygon(7% 0, 100% 0, 93% 100%, 0 100%);
+      padding: 0.25rem 0.55rem;
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      display: none;
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      display: grid;
+      line-height: 1;
+    }
+
+    .brand-text strong {
+      font-size: 0.95rem;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+    }
+
+    .brand-text span {
+      margin-top: 0.3rem;
+      color: var(--muted);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(1rem, 2vw, 2rem);
+      color: rgba(255,255,255,0.76);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-block: 0.4rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      transform: scaleX(0);
+      transform-origin: right;
+      background: var(--orange);
+      transition: transform 0.4s var(--ease);
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.9rem;
+      height: 2.9rem;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+      color: var(--white);
+      box-shadow: 0 0 32px rgba(240,90,40,0.18);
+      backdrop-filter: blur(18px);
+      transition: transform 0.35s var(--ease), background 0.35s var(--ease);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2.9rem;
+      height: 2.9rem;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+      color: var(--white);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
+      backdrop-filter: blur(18px);
+      cursor: pointer;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      transition: transform 0.35s var(--ease), background 0.35s var(--ease), color 0.35s var(--ease);
+    }
+
+    .toggle-btn:hover {
+      transform: translateY(-2px) scale(1.04);
+      background: rgba(240,90,40,0.18);
+    }
+
+    .toggle-btn svg {
+      width: 1.05rem;
+      height: 1.05rem;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px) scale(1.04);
+      background: rgba(240,90,40,0.2);
+    }
+
+    .section {
+      position: relative;
+      min-height: 100vh;
+      padding: clamp(6rem, 10vw, 10rem) clamp(1.1rem, 5vw, 5rem);
+      overflow: hidden;
+    }
+
+    .section-inner {
+      width: min(100%, 1240px);
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 0 0 1.4rem;
+      color: rgba(255,255,255,0.72);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 2.35rem;
+      height: 2px;
+      background: var(--orange);
+      box-shadow: 0 0 24px rgba(240,90,40,0.8);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 1050px;
+      margin-bottom: 1.25rem;
+      font-size: clamp(3.05rem, 6.5vw, 7rem);
+      line-height: 0.96;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      text-wrap: balance;
+    }
+
+    h2 {
+      max-width: 920px;
+      margin-bottom: 1.05rem;
+      font-size: clamp(2rem, 4.35vw, 4.45rem);
+      line-height: 1.02;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      text-wrap: balance;
+    }
+
+    h3 {
+      margin-bottom: 0.8rem;
+      font-size: clamp(1.05rem, 1.55vw, 1.35rem);
+      line-height: 1.08;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: clamp(1rem, 1.4vw, 1.14rem);
+      line-height: 1.75;
+    }
+
+    .accent {
+      color: var(--orange);
+      text-shadow: 0 0 32px rgba(240, 90, 40, 0.58);
+    }
+
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      align-items: end;
+      padding-top: 8rem;
+      padding-bottom: clamp(2.3rem, 5vw, 4rem);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: auto -10vw -12vh auto;
+      width: 58vw;
+      height: 72vh;
+      background: linear-gradient(135deg, rgba(240,90,40,0.22), rgba(36,59,107,0.05));
+      clip-path: polygon(23% 0, 100% 0, 77% 100%, 0% 100%);
+      filter: blur(2px);
+      opacity: 0.78;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(16rem, 24rem);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: end;
+    }
+
+    .hero-copy {
+      padding-bottom: 2rem;
+    }
+
+    .hero-copy p {
+      max-width: 700px;
+      color: rgba(255,255,255,0.78);
+      font-size: clamp(1.02rem, 1.45vw, 1.25rem);
+      line-height: 1.62;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin-top: 2.2rem;
+    }
+
+    .button {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      min-height: 3.6rem;
+      padding: 0 1.25rem 0 1.55rem;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        linear-gradient(135deg, rgba(240,90,40,0.96), rgba(240,90,40,0.58)),
+        rgba(255,255,255,0.08);
+      box-shadow: 0 0 40px rgba(240,90,40,0.3), inset 0 1px 0 rgba(255,255,255,0.35);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform 0.38s var(--ease), box-shadow 0.38s var(--ease);
+    }
+
+    .button::before,
+    .service-card::before,
+    .team-card::before {
+      content: "";
+      position: absolute;
+      inset: -35% auto -35% -45%;
+      width: 34%;
+      transform: rotate(18deg);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.32), transparent);
+      transition: left 0.7s var(--ease);
+      pointer-events: none;
+    }
+
+    .button:hover {
+      transform: translateY(-3px) scale(1.025);
+      box-shadow: 0 0 58px rgba(240,90,40,0.5), inset 0 1px 0 rgba(255,255,255,0.4);
+    }
+
+    .button:hover::before,
+    .service-card:hover::before,
+    .team-card:hover::before {
+      left: 118%;
+    }
+
+    .button svg,
+    .nav-cta svg {
+      width: 1.05rem;
+      height: 1.05rem;
+      flex: 0 0 auto;
+    }
+
+    .ghost-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.72rem;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .ghost-link span {
+      display: inline-grid;
+      place-items: center;
+      width: 2.8rem;
+      height: 2.8rem;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.05);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
+    }
+
+    .ghost-link em {
+      font-style: normal;
+    }
+
+    .hero-instrument {
+      position: relative;
+      padding: 1rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(9, 16, 31, 0.36);
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow);
+      clip-path: polygon(0 0, 92% 0, 100% 16%, 100% 100%, 8% 100%, 0 84%);
+    }
+
+    .radar {
+      position: relative;
+      min-height: 23rem;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle, transparent 0 18%, rgba(255,255,255,0.06) 18% 18.5%, transparent 18.5% 38%, rgba(255,255,255,0.06) 38% 38.5%, transparent 38.5% 58%, rgba(255,255,255,0.06) 58% 58.5%, transparent 58.5%),
+        linear-gradient(135deg, rgba(36,59,107,0.42), rgba(5,10,22,0.6));
+    }
+
+    .radar::before {
+      content: "";
+      position: absolute;
+      inset: 50% 50% auto auto;
+      width: 50%;
+      height: 50%;
+      transform-origin: 100% 0%;
+      background: conic-gradient(from 270deg, rgba(240,90,40,0.58), transparent 34deg);
+      animation: sweep 6s linear infinite;
+    }
+
+    .radar-core {
+      position: relative;
+      z-index: 2;
+      width: 9rem;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(9,16,31,0.68);
+      box-shadow: 0 0 60px rgba(240,90,40,0.26), inset 0 0 36px rgba(36,59,107,0.8);
+      text-align: center;
+    }
+
+    .radar-core strong {
+      display: block;
+      font-size: 1.7rem;
+      font-weight: 900;
+    }
+
+    .radar-core span {
+      display: block;
+      margin-top: 0.35rem;
+      color: var(--muted);
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .ticker {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 1px;
+      background: rgba(255,255,255,0.12);
+    }
+
+    .ticker div {
+      padding: 1rem;
+      background: rgba(6, 12, 27, 0.76);
+    }
+
+    .ticker strong {
+      display: block;
+      font-size: 1.05rem;
+      font-weight: 900;
+    }
+
+    .ticker span {
+      display: block;
+      margin-top: 0.3rem;
+      color: var(--muted);
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .scroll-cue {
+      position: absolute;
+      left: clamp(1.1rem, 5vw, 5rem);
+      bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.66rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+    }
+
+    .scroll-cue::before {
+      content: "";
+      width: 1px;
+      height: 4rem;
+      background: linear-gradient(var(--orange), transparent);
+      animation: cue 1.8s var(--ease) infinite;
+    }
+
+    .about {
+      background:
+        linear-gradient(112deg, rgba(9,16,31,0.92) 0 46%, rgba(36,59,107,0.46) 46% 68%, rgba(9,16,31,0.95) 68%),
+        radial-gradient(circle at 20% 24%, rgba(240,90,40,0.15), transparent 30rem);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+
+    .visual-frame {
+      position: relative;
+      min-height: clamp(28rem, 47vw, 41rem);
+      border: 1px solid rgba(255,255,255,0.14);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
+        rgba(10, 18, 38, 0.58);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      clip-path: polygon(0 0, 88% 0, 100% 17%, 100% 100%, 12% 100%, 0 83%);
+    }
+
+    .visual-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 36px 36px;
+      perspective: 900px;
+      transform: rotateX(58deg) translateY(7rem) scale(1.4);
+      opacity: 0.34;
+    }
+
+    .warehouse-loop {
+      position: absolute;
+      inset: 10%;
+      transform-style: preserve-3d;
+      perspective: 900px;
+    }
+
+    .rack {
+      position: absolute;
+      inset: auto;
+      width: 32%;
+      height: 70%;
+      bottom: 8%;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(36,59,107,0.18));
+      box-shadow: inset 0 0 0 6px rgba(255,255,255,0.025);
+    }
+
+    .rack.left {
+      left: 4%;
+      transform: rotateY(58deg) skewY(-4deg);
+    }
+
+    .rack.right {
+      right: 4%;
+      transform: rotateY(-58deg) skewY(4deg);
+    }
+
+    .rack::before {
+      content: "";
+      position: absolute;
+      inset: 10% 12%;
+      background:
+        linear-gradient(var(--orange), var(--orange)) 0 24% / 100% 3px no-repeat,
+        linear-gradient(var(--orange), var(--orange)) 0 52% / 100% 3px no-repeat,
+        linear-gradient(var(--orange), var(--orange)) 0 80% / 100% 3px no-repeat,
+        linear-gradient(90deg, rgba(255,255,255,0.16) 2px, transparent 2px) 0 0 / 26% 100%;
+      opacity: 0.72;
+    }
+
+    .loader-track {
+      position: absolute;
+      left: 22%;
+      right: 22%;
+      bottom: 18%;
+      height: 6px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transform: perspective(500px) rotateX(64deg);
+    }
+
+    .loader-dot {
+      position: absolute;
+      left: 12%;
+      bottom: 14%;
+      width: 3rem;
+      height: 2rem;
+      background: var(--orange);
+      box-shadow: 0 0 38px rgba(240,90,40,0.7);
+      transform: skewX(-16deg);
+      animation: shuttle 4.2s var(--ease) infinite;
+    }
+
+    .holo-label {
+      position: absolute;
+      right: 1.2rem;
+      bottom: 1.2rem;
+      max-width: 17rem;
+      padding: 1rem;
+      border: 1px solid rgba(255,255,255,0.13);
+      background: rgba(5, 10, 22, 0.58);
+      backdrop-filter: blur(16px);
+    }
+
+    .holo-label strong {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 900;
+    }
+
+    .holo-label span {
+      display: block;
+      margin-top: 0.45rem;
+      color: var(--muted);
+      font-size: 0.72rem;
+      line-height: 1.55;
+    }
+
+    .copy-stack {
+      position: relative;
+    }
+
+    .copy-stack::before {
+      content: "";
+      position: absolute;
+      top: -3rem;
+      right: -5rem;
+      width: min(22vw, 18rem);
+      height: min(44vw, 37rem);
+      background: linear-gradient(180deg, rgba(240,90,40,0.78), rgba(240,90,40,0.08));
+      opacity: 0.7;
+      clip-path: polygon(38% 0, 100% 0, 62% 100%, 0 100%);
+      z-index: -1;
+    }
+
+    .lead {
+      max-width: 760px;
+      color: rgba(255,255,255,0.8);
+      font-size: clamp(1rem, 1.28vw, 1.16rem);
+    }
+
+    .about-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .about-point {
+      padding: 1.25rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.045);
+      backdrop-filter: blur(12px);
+    }
+
+    .about-point strong {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .about-point span {
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.55;
+    }
+
+    .services {
+      min-height: auto;
+      background: linear-gradient(180deg, rgba(9,16,31,0.2), rgba(30,42,90,0.32));
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(18rem, 28rem);
+      gap: 2rem;
+      align-items: end;
+      margin-bottom: clamp(2rem, 5vw, 4.5rem);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      perspective: 1400px;
+    }
+
+    .service-card {
+      --rx: 0deg;
+      --ry: 0deg;
+      position: relative;
+      min-height: 29rem;
+      padding: 1.35rem;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.13);
+      background:
+        radial-gradient(circle at var(--mx, 50%) var(--my, 30%), rgba(240,90,40,0.22), transparent 14rem),
+        linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.025));
+      box-shadow: 0 22px 80px rgba(0,0,0,0.22);
+      transform: rotateX(var(--rx)) rotateY(var(--ry));
+      transform-style: preserve-3d;
+      transition: transform 0.22s ease, border-color 0.36s var(--ease), box-shadow 0.36s var(--ease);
+      isolation: isolate;
+    }
+
+    .service-card:nth-child(odd) {
+      clip-path: polygon(0 0, 92% 0, 100% 10%, 100% 100%, 8% 100%, 0 90%);
+    }
+
+    .service-card:nth-child(even) {
+      clip-path: polygon(8% 0, 100% 0, 100% 90%, 92% 100%, 0 100%, 0 10%);
+    }
+
+    .service-card:hover {
+      border-color: rgba(240,90,40,0.55);
+      box-shadow: 0 26px 90px rgba(240,90,40,0.18), 0 22px 80px rgba(0,0,0,0.28);
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 54%;
+      background:
+        linear-gradient(150deg, transparent 42%, rgba(240,90,40,0.32) 42% 56%, transparent 56%),
+        linear-gradient(180deg, transparent, rgba(6,12,27,0.8));
+      z-index: -1;
+      transform: translateY(12%);
+      transition: transform 0.6s var(--ease);
+    }
+
+    .service-card:hover::after {
+      transform: translateY(0);
+    }
+
+    .icon-box {
+      width: 4.5rem;
+      height: 4.5rem;
+      display: grid;
+      place-items: center;
+      margin-bottom: 4.5rem;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.06);
+      box-shadow: inset 0 0 24px rgba(255,255,255,0.06), 0 0 34px rgba(240,90,40,0.16);
+      transform: translateZ(44px);
+    }
+
+    .icon-box svg {
+      width: 2rem;
+      height: 2rem;
+      color: var(--orange);
+      filter: drop-shadow(0 0 14px rgba(240,90,40,0.7));
+      transition: transform 0.5s var(--ease);
+    }
+
+    .service-card:hover .icon-box svg {
+      transform: translateY(-4px) rotate(-8deg) scale(1.08);
+    }
+
+    .service-card h3,
+    .service-card p,
+    .service-meta {
+      transform: translateZ(34px);
+    }
+
+    .service-card p {
+      font-size: 0.96rem;
+    }
+
+    .service-meta {
+      position: absolute;
+      left: 1.35rem;
+      right: 1.35rem;
+      bottom: 1.35rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: rgba(255,255,255,0.58);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .service-meta::after {
+      content: "";
+      width: 3rem;
+      height: 2px;
+      background: var(--orange);
+      box-shadow: 0 0 18px rgba(240,90,40,0.8);
+    }
+
+    .infrastructure {
+      background:
+        radial-gradient(circle at 84% 28%, rgba(240,90,40,0.12), transparent 28rem),
+        linear-gradient(180deg, rgba(6,12,27,0.7), rgba(30,42,90,0.42));
+    }
+
+    .infra-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+      gap: clamp(2rem, 6vw, 5rem);
+      align-items: center;
+    }
+
+    .counter-wall {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .counter-panel {
+      position: relative;
+      padding: clamp(1.2rem, 3vw, 2rem);
+      border: 1px solid rgba(255,255,255,0.13);
+      background: rgba(255,255,255,0.055);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 70px rgba(0,0,0,0.24);
+      overflow: hidden;
+    }
+
+    .counter-panel::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 28%;
+      background: linear-gradient(125deg, transparent 0 35%, rgba(240,90,40,0.22) 35% 54%, transparent 54%);
+    }
+
+    .counter {
+      display: block;
+      color: var(--white);
+      font-size: clamp(2.25rem, 4vw, 4.15rem);
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .counter-label {
+      display: block;
+      margin-top: 0.6rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .map-panel {
+      position: relative;
+      min-height: clamp(30rem, 48vw, 42rem);
+      border: 1px solid rgba(255,255,255,0.13);
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, rgba(36,59,107,0.8), rgba(7,13,27,0.92) 62%);
+      background-size: 34px 34px, 34px 34px, auto;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .map-panel svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .map-line {
+      fill: none;
+      stroke: rgba(255,255,255,0.22);
+      stroke-width: 1.5;
+      stroke-dasharray: 7 9;
+    }
+
+    .map-pulse {
+      fill: none;
+      stroke: var(--orange);
+      stroke-width: 3;
+      stroke-linecap: round;
+      filter: drop-shadow(0 0 12px rgba(240,90,40,0.9));
+      stroke-dasharray: 45 760;
+      animation: route 4.8s linear infinite;
+    }
+
+    .map-node {
+      position: absolute;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      border: 2px solid var(--white);
+      background: var(--orange);
+      box-shadow: 0 0 30px rgba(240,90,40,0.9);
+    }
+
+    .map-node:nth-of-type(1) { left: 16%; top: 25%; }
+    .map-node:nth-of-type(2) { left: 50%; top: 42%; }
+    .map-node:nth-of-type(3) { left: 74%; top: 24%; }
+    .map-node:nth-of-type(4) { left: 82%; top: 70%; }
+    .map-node:nth-of-type(5) { left: 30%; top: 72%; }
+
+    .floating-panel {
+      position: absolute;
+      min-width: 12rem;
+      padding: 0.95rem 1rem;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(9,16,31,0.64);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+    }
+
+    .floating-panel strong {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .floating-panel span {
+      display: block;
+      margin-top: 0.35rem;
+      color: var(--muted);
+      font-size: 0.72rem;
+      line-height: 1.45;
+    }
+
+    .panel-a { left: 8%; top: 10%; }
+    .panel-b { right: 8%; top: 38%; }
+    .panel-c { left: 22%; bottom: 11%; }
+
+    .clients {
+      min-height: auto;
+      padding-block: clamp(5rem, 8vw, 8rem);
+      background: rgba(6,12,27,0.52);
+    }
+
+    .logo-wall {
+      position: relative;
+      margin-inline: calc(clamp(1.1rem, 5vw, 5rem) * -1);
+      padding-block: 3.5rem;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+
+    .logo-wall::before,
+    .logo-wall::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 18%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .logo-wall::before {
+      left: 0;
+      background: linear-gradient(90deg, #070d1b, transparent);
+    }
+
+    .logo-wall::after {
+      right: 0;
+      background: linear-gradient(270deg, #070d1b, transparent);
+    }
+
+    .logo-track {
+      display: flex;
+      gap: 1rem;
+      width: max-content;
+      animation: marquee 32s linear infinite;
+      will-change: transform;
+    }
+
+    .logo-wall:hover .logo-track {
+      animation-play-state: paused;
+    }
+
+    .client-logo {
+      display: grid;
+      place-items: center;
+      width: clamp(12rem, 18vw, 17rem);
+      height: 8.5rem;
+      padding: 1rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      background:
+        radial-gradient(circle at 50% 0, rgba(240,90,40,0.16), transparent 60%),
+        rgba(255,255,255,0.055);
+      box-shadow: 0 18px 60px rgba(0,0,0,0.25);
+      transform: rotateY(var(--logo-ry, -10deg)) translateZ(var(--logo-z, 0));
+      color: rgba(255,255,255,0.82);
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 900;
+      line-height: 1.35;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      clip-path: polygon(0 0, 92% 0, 100% 18%, 100% 100%, 8% 100%, 0 82%);
+    }
+
+    .client-logo img {
+      display: block;
+      width: 78%;
+      max-height: 4.9rem;
+      object-fit: contain;
+      filter: drop-shadow(0 14px 20px rgba(0,0,0,0.28));
+    }
+
+    body.theme-light .client-logo img {
+      filter: drop-shadow(0 12px 16px rgba(30,42,90,0.16));
+    }
+
+    .client-logo:nth-child(3n) { --logo-ry: 10deg; --logo-z: 30px; }
+    .client-logo:nth-child(4n) { --logo-ry: -18deg; --logo-z: -20px; }
+
+    .process {
+      min-height: 130vh;
+      background:
+        linear-gradient(180deg, rgba(6,12,27,0.42), rgba(30,42,90,0.34)),
+        radial-gradient(circle at 50% 48%, rgba(240,90,40,0.12), transparent 32rem);
+    }
+
+    .process-stage {
+      position: relative;
+      min-height: 66rem;
+      margin-top: 3rem;
+      border: 1px solid rgba(255,255,255,0.11);
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        rgba(9,16,31,0.54);
+      background-size: 44px 44px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .process-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .process-path {
+      fill: none;
+      stroke: rgba(255,255,255,0.18);
+      stroke-width: 4;
+      stroke-linecap: round;
+    }
+
+    .process-progress {
+      fill: none;
+      stroke: var(--orange);
+      stroke-width: 5;
+      stroke-linecap: round;
+      filter: drop-shadow(0 0 16px rgba(240,90,40,0.86));
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+    }
+
+    .process-pulse {
+      fill: var(--white);
+      filter: drop-shadow(0 0 15px rgba(240,90,40,1));
+      opacity: 0;
+    }
+
+    .step-card {
+      position: absolute;
+      width: min(25rem, 35vw);
+      padding: 1.2rem;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(9,16,31,0.68);
+      backdrop-filter: blur(17px);
+      box-shadow: 0 18px 70px rgba(0,0,0,0.3);
+      transform: translateY(30px);
+      opacity: 0.4;
+      transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    }
+
+    .step-card.is-active {
+      border-color: rgba(240,90,40,0.55);
+      box-shadow: 0 18px 80px rgba(240,90,40,0.18), 0 18px 70px rgba(0,0,0,0.3);
+    }
+
+    .step-card strong {
+      display: inline-grid;
+      place-items: center;
+      width: 2.4rem;
+      height: 2.4rem;
+      margin-bottom: 1rem;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 28px rgba(240,90,40,0.72);
+      font-size: 0.76rem;
+      font-weight: 900;
+    }
+
+    .step-card p {
+      margin-bottom: 0;
+      font-size: 0.92rem;
+    }
+
+    .step-1 { left: 7%; top: 10%; }
+    .step-2 { right: 8%; top: 24%; }
+    .step-3 { left: 10%; bottom: 28%; }
+    .step-4 { right: 10%; bottom: 8%; }
+
+    .team {
+      background:
+        linear-gradient(180deg, rgba(30,42,90,0.26), rgba(6,12,27,0.78)),
+        radial-gradient(circle at 80% 22%, rgba(240,90,40,0.12), transparent 28rem);
+    }
+
+    .team::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.26;
+      background:
+        linear-gradient(90deg, rgba(240,90,40,0.16), transparent 24%),
+        repeating-linear-gradient(112deg, transparent 0 34px, rgba(255,255,255,0.04) 34px 36px);
+      transform: translateY(var(--team-bg, 0px));
+    }
+
+    .team-rig {
+      position: relative;
+      margin-top: clamp(2rem, 5vw, 4rem);
+      min-height: clamp(31rem, 44vw, 42rem);
+      perspective: 1300px;
+    }
+
+    .team-road {
+      position: absolute;
+      left: 2%;
+      right: 2%;
+      bottom: 4.1rem;
+      height: 0.32rem;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), rgba(240,90,40,0.86), rgba(255,255,255,0.22), transparent);
+      box-shadow: 0 0 32px rgba(240,90,40,0.34);
+    }
+
+    .team-road::before {
+      content: "";
+      position: absolute;
+      inset: -2.4rem 0 auto;
+      height: 1px;
+      background: repeating-linear-gradient(90deg, transparent 0 4rem, rgba(255,255,255,0.3) 4rem 6rem);
+      animation: roadMarks 2.8s linear infinite;
+    }
+
+    .team-truck {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 5.2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(12rem, 18rem);
+      align-items: end;
+      gap: 1.1rem;
+      transform-style: preserve-3d;
+      transform: rotateX(4deg) rotateY(var(--rig-tilt, -2deg));
+      transition: transform 0.6s var(--ease);
+    }
+
+    .team-rig:hover .team-truck {
+      --rig-tilt: 2deg;
+    }
+
+    .trailer-shell {
+      position: relative;
+      min-height: clamp(21rem, 28vw, 27rem);
+      padding: clamp(1rem, 2.2vw, 1.6rem);
+      border: 1px solid rgba(255,255,255,0.16);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02)),
+        linear-gradient(180deg, rgba(36,59,107,0.78), rgba(7,13,27,0.9));
+      box-shadow: 0 28px 110px rgba(0,0,0,0.42), inset 0 1px 0 rgba(255,255,255,0.2);
+      clip-path: polygon(0 0, 96% 0, 100% 13%, 100% 100%, 4% 100%, 0 87%);
+      overflow: hidden;
+    }
+
+    .trailer-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(110deg, transparent 0 42%, rgba(240,90,40,0.22) 42% 50%, transparent 50%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.055) 0 1px, transparent 1px 12.5%);
+      pointer-events: none;
+    }
+
+    .trailer-shell::after {
+      content: "NEXGEN TEAM CARGO";
+      position: absolute;
+      left: clamp(1rem, 3vw, 2rem);
+      top: 0.8rem;
+      color: rgba(255,255,255,0.14);
+      font-size: clamp(1.8rem, 5vw, 5rem);
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .team-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: clamp(0.7rem, 1.2vw, 1rem);
+      height: 100%;
+      padding-top: clamp(2rem, 5vw, 4rem);
+    }
+
+    .team-card {
+      --rx: 0deg;
+      --ry: 0deg;
+      position: relative;
+      min-height: clamp(15rem, 19vw, 18.5rem);
+      padding: 1rem;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.14);
+      background:
+        radial-gradient(circle at var(--mx, 50%) var(--my, 30%), rgba(240,90,40,0.18), transparent 9rem),
+        linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.035));
+      box-shadow: 0 18px 58px rgba(0,0,0,0.25);
+      transform: rotateX(var(--rx)) rotateY(var(--ry)) translateZ(22px);
+      transform-style: preserve-3d;
+      transition: transform 0.25s ease, border-color 0.35s var(--ease), box-shadow 0.35s var(--ease), background 0.35s var(--ease);
+      isolation: isolate;
+      clip-path: polygon(0 0, 92% 0, 100% 10%, 100% 100%, 8% 100%, 0 90%);
+    }
+
+    .team-card:hover {
+      border-color: rgba(240,90,40,0.62);
+      box-shadow: 0 22px 76px rgba(240,90,40,0.18), 0 18px 58px rgba(0,0,0,0.3);
+    }
+
+    .team-icon {
+      position: relative;
+      width: 4rem;
+      height: 4rem;
+      display: grid;
+      place-items: center;
+      margin-bottom: clamp(2.6rem, 5vw, 4.6rem);
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(5,10,22,0.36);
+      box-shadow: 0 0 36px rgba(240,90,40,0.14), inset 0 1px 0 rgba(255,255,255,0.14);
+      transform: translateZ(34px);
+    }
+
+    .team-icon svg {
+      width: 1.85rem;
+      height: 1.85rem;
+      color: var(--orange);
+      filter: drop-shadow(0 0 14px rgba(240,90,40,0.7));
+      transition: transform 0.48s var(--ease);
+    }
+
+    .team-card:hover .team-icon svg {
+      transform: translateY(-4px) rotate(-7deg) scale(1.08);
+    }
+
+    .team-info {
+      position: relative;
+      z-index: 2;
+      padding: 0;
+      transform: translateZ(30px);
+    }
+
+    .team-info h3 {
+      font-size: 0.92rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .team-info p {
+      margin-bottom: 0;
+      font-size: 0.78rem;
+      line-height: 1.55;
+    }
+
+    .team-cabin {
+      position: relative;
+      min-height: clamp(17rem, 23vw, 23rem);
+      border: 1px solid rgba(255,255,255,0.16);
+      background:
+        linear-gradient(135deg, rgba(240,90,40,0.95), rgba(240,90,40,0.52)),
+        var(--orange);
+      box-shadow: 0 28px 90px rgba(0,0,0,0.36), 0 0 52px rgba(240,90,40,0.2);
+      clip-path: polygon(0 28%, 54% 28%, 100% 58%, 100% 100%, 0 100%);
+      overflow: hidden;
+    }
+
+    .team-cabin::before {
+      content: "";
+      position: absolute;
+      right: 16%;
+      top: 34%;
+      width: 34%;
+      height: 20%;
+      background: linear-gradient(135deg, rgba(255,255,255,0.78), rgba(255,255,255,0.18));
+      clip-path: polygon(0 0, 64% 0, 100% 100%, 0 100%);
+      box-shadow: 0 0 26px rgba(255,255,255,0.2);
+    }
+
+    .team-cabin::after {
+      content: "OPS";
+      position: absolute;
+      left: 16%;
+      bottom: 28%;
+      color: rgba(255,255,255,0.88);
+      font-size: clamp(2rem, 4vw, 4rem);
+      font-weight: 900;
+      letter-spacing: 0.05em;
+    }
+
+    .team-wheel {
+      position: absolute;
+      bottom: -2.25rem;
+      width: clamp(4.3rem, 7vw, 6.2rem);
+      height: clamp(4.3rem, 7vw, 6.2rem);
+      border-radius: 50%;
+      border: clamp(0.75rem, 1.2vw, 1rem) solid #080d19;
+      background:
+        radial-gradient(circle, rgba(255,255,255,0.9) 0 22%, rgba(36,59,107,0.9) 23% 38%, #111827 39%);
+      box-shadow: inset 0 0 0 0.22rem rgba(240,90,40,0.85), 0 0 30px rgba(0,0,0,0.3);
+      animation: wheelSpin 1.4s linear infinite;
+      z-index: 4;
+    }
+
+    .team-wheel.w1 { left: 10%; }
+    .team-wheel.w2 { left: 63%; }
+    .team-wheel.w3 { right: 7%; }
+
+    .team-status {
+      position: absolute;
+      left: 3%;
+      right: 3%;
+      bottom: 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(14px);
+    }
+
+    .team-status div {
+      padding: 0.9rem 1rem;
+      background: rgba(5,10,22,0.58);
+    }
+
+    .team-status strong {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .team-status span {
+      display: block;
+      margin-top: 0.35rem;
+      color: var(--muted);
+      font-size: 0.72rem;
+      line-height: 1.4;
+    }
+
+    .contact {
+      min-height: 78vh;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      padding-bottom: clamp(8rem, 12vw, 11rem);
+      background:
+        radial-gradient(circle at var(--gx, 20%) var(--gy, 30%), rgba(240,90,40,0.22), transparent 28rem),
+        radial-gradient(circle at 78% 72%, rgba(36,59,107,0.8), transparent 28rem),
+        #070d1b;
+    }
+
+    .freight-lane {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: clamp(3.9rem, 6vw, 5.4rem);
+      height: 9rem;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.88;
+    }
+
+    .freight-road {
+      position: absolute;
+      left: -5vw;
+      right: -5vw;
+      bottom: 1.25rem;
+      height: 0.32rem;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), var(--orange), rgba(255,255,255,0.22), transparent);
+      box-shadow: 0 0 28px rgba(240,90,40,0.3);
+    }
+
+    .freight-road::before {
+      content: "";
+      position: absolute;
+      inset: -2rem 0 auto;
+      height: 1px;
+      background: repeating-linear-gradient(90deg, transparent 0 3rem, rgba(255,255,255,0.34) 3rem 5rem);
+      animation: roadMarks 2s linear infinite;
+    }
+
+    .freight-truck {
+      position: absolute;
+      left: -18rem;
+      bottom: 1.9rem;
+      width: 16rem;
+      height: 5.8rem;
+      filter: drop-shadow(0 24px 30px rgba(0,0,0,0.35)) drop-shadow(0 0 22px rgba(240,90,40,0.24));
+      animation: truckDrive 12s linear infinite;
+    }
+
+    .truck-trailer,
+    .truck-cabin {
+      position: absolute;
+      bottom: 1.2rem;
+      border: 1px solid rgba(255,255,255,0.24);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.22), rgba(255,255,255,0.02)),
+        var(--blue);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.26);
+    }
+
+    .truck-trailer {
+      left: 0;
+      width: 10rem;
+      height: 3.25rem;
+      clip-path: polygon(0 0, 94% 0, 100% 18%, 100% 100%, 0 100%);
+    }
+
+    .truck-trailer::before {
+      content: "NEXGEN";
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255,255,255,0.9);
+      font-size: 0.8rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .truck-trailer::after {
+      content: "";
+      position: absolute;
+      right: 1rem;
+      top: 0.95rem;
+      width: 2rem;
+      height: 0.9rem;
+      background: var(--orange);
+      clip-path: polygon(0 0, 66% 0, 100% 50%, 66% 100%, 0 100%, 30% 50%);
+      box-shadow: 0 0 18px rgba(240,90,40,0.65);
+    }
+
+    .truck-cabin {
+      right: 0;
+      width: 5.2rem;
+      height: 3.7rem;
+      background:
+        linear-gradient(135deg, rgba(240,90,40,0.94), rgba(240,90,40,0.58)),
+        var(--orange);
+      clip-path: polygon(0 18%, 64% 18%, 100% 58%, 100% 100%, 0 100%);
+    }
+
+    .truck-cabin::before {
+      content: "";
+      position: absolute;
+      left: 2.35rem;
+      top: 0.58rem;
+      width: 1.35rem;
+      height: 1.05rem;
+      background: rgba(255,255,255,0.72);
+      clip-path: polygon(0 0, 70% 0, 100% 100%, 0 100%);
+    }
+
+    .truck-wheel {
+      position: absolute;
+      bottom: 0.35rem;
+      width: 1.7rem;
+      height: 1.7rem;
+      border-radius: 50%;
+      border: 0.36rem solid #111827;
+      background: rgba(255,255,255,0.88);
+      box-shadow: inset 0 0 0 0.18rem var(--orange);
+      animation: wheelSpin 0.7s linear infinite;
+    }
+
+    .truck-wheel.one { left: 1.4rem; }
+    .truck-wheel.two { left: 8.5rem; }
+    .truck-wheel.three { right: 1.1rem; }
+
+    .social-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      justify-content: center;
+    }
+
+    .social-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      min-width: 3rem;
+      height: 3rem;
+      padding: 0 0.95rem;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.055);
+      color: var(--white);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), 0 0 26px rgba(240,90,40,0.08);
+      backdrop-filter: blur(14px);
+      transition: transform 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      border-color: rgba(240,90,40,0.55);
+      box-shadow: 0 0 32px rgba(240,90,40,0.18);
+    }
+
+    .social-link svg {
+      width: 1.15rem;
+      height: 1.15rem;
+      flex: 0 0 auto;
+    }
+
+    .social-link span {
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .contact-logo {
+      width: min(15rem, 58vw);
+      margin: 0 auto 1.2rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.9);
+      clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+      box-shadow: 0 0 42px rgba(240,90,40,0.12);
+    }
+
+    .contact-logo img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .contact-grid {
+      display: block;
+      text-align: center;
+    }
+
+    .contact .section-inner {
+      z-index: 2;
+    }
+
+    .contact-details {
+      display: grid;
+      grid-template-columns: minmax(22rem, 1.8fr) minmax(10rem, 0.8fr) minmax(9rem, 0.7fr) minmax(16rem, 1.1fr);
+      gap: 0.75rem;
+      margin: 1.5rem auto 0;
+      max-width: 1180px;
+    }
+
+    .contact-detail {
+      display: flex;
+      gap: 0.72rem;
+      align-items: center;
+      min-width: 0;
+      padding: 0.85rem 0.9rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+      transition: transform 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+    }
+
+    .contact-detail:hover {
+      transform: translateY(-2px);
+      border-color: rgba(240,90,40,0.42);
+      box-shadow: 0 0 26px rgba(240,90,40,0.12);
+    }
+
+    .contact-detail svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--orange);
+      flex: 0 0 auto;
+    }
+
+    .contact-detail span {
+      color: rgba(255,255,255,0.74);
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 0.78rem;
+      line-height: 1.35;
+    }
+
+    .contact h2 {
+      max-width: none;
+      margin-inline: auto;
+      font-size: clamp(1.8rem, 3.2vw, 3.25rem);
+      line-height: 1.08;
+      white-space: nowrap;
+    }
+
+    .contact-card {
+      position: relative;
+      padding: clamp(1.1rem, 3vw, 1.6rem);
+      border: 1px solid rgba(255,255,255,0.16);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.035)),
+        rgba(9,16,31,0.62);
+      backdrop-filter: blur(22px);
+      box-shadow: var(--shadow);
+      clip-path: polygon(0 0, 90% 0, 100% 10%, 100% 100%, 10% 100%, 0 90%);
+    }
+
+    .field {
+      position: relative;
+      margin-bottom: 1rem;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 0;
+      outline: 0;
+      padding: 1rem 1rem;
+      color: var(--white);
+      background: rgba(255,255,255,0.055);
+      transition: border-color 0.35s var(--ease), box-shadow 0.35s var(--ease), background 0.35s var(--ease);
+    }
+
+    .field textarea {
+      min-height: 9rem;
+      resize: vertical;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: rgba(255,255,255,0.42);
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: rgba(240,90,40,0.8);
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 0 0 4px rgba(240,90,40,0.12), 0 0 32px rgba(240,90,40,0.18);
+    }
+
+    .footer-strip {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.1rem clamp(1.1rem, 5vw, 5rem);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.5);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    @keyframes truckDrive {
+      0% { transform: translateX(0) translateY(0); }
+      45% { transform: translateX(calc(100vw + 18rem)) translateY(-0.35rem); }
+      100% { transform: translateX(calc(100vw + 18rem)) translateY(-0.35rem); }
+    }
+
+    @keyframes wheelSpin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes roadMarks {
+      to { transform: translateX(-5rem); }
+    }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(38px);
+    }
+
+    @keyframes sweep {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes cue {
+      0%, 100% { transform: translateY(-0.4rem); opacity: 0.45; }
+      50% { transform: translateY(0.65rem); opacity: 1; }
+    }
+
+    @keyframes shuttle {
+      0%, 100% { transform: translateX(0) skewX(-16deg); }
+      50% { transform: translateX(220%) skewX(-16deg); }
+    }
+
+    @keyframes route {
+      to { stroke-dashoffset: -805; }
+    }
+
+    @keyframes marquee {
+      to { transform: translateX(-50%); }
+    }
+
+    @media (max-width: 1100px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid,
+      .split,
+      .infra-grid,
+      .contact-grid,
+      .section-heading {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-instrument {
+        max-width: 30rem;
+      }
+
+      .services-grid,
+      .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .team-truck {
+        grid-template-columns: minmax(0, 1fr) minmax(9rem, 12rem);
+      }
+
+      .team-cabin {
+        min-height: 18rem;
+      }
+
+      .contact-details {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact h2 {
+        white-space: normal;
+      }
+
+      .service-card {
+        min-height: 24rem;
+      }
+
+      .step-card {
+        width: min(28rem, 42vw);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        padding-inline: 1rem;
+        gap: 0.75rem;
+      }
+
+      .brand {
+        gap: 0.55rem;
+      }
+
+      .brand-mark {
+        width: 5.2rem;
+        height: 2.05rem;
+        padding: 0.18rem 0.36rem;
+      }
+
+      .brand-text span {
+        display: none;
+      }
+
+      .brand-text strong {
+        font-size: 0.75rem;
+      }
+
+      .nav-actions {
+        gap: 0.4rem;
+      }
+
+      .toggle-btn,
+      .nav-cta {
+        width: 2.35rem;
+        min-width: 2.35rem;
+        height: 2.35rem;
+      }
+
+      .toggle-btn {
+        font-size: 0.64rem;
+      }
+
+      .section {
+        min-height: auto;
+        padding: 5.5rem 1rem;
+      }
+
+      .hero {
+        min-height: 100svh;
+        align-items: end;
+        padding-top: 7rem;
+      }
+
+      h1 {
+        font-size: clamp(2.55rem, 12vw, 4.2rem);
+        line-height: 1.02;
+      }
+
+      h2 {
+        font-size: clamp(1.85rem, 8.8vw, 3rem);
+        line-height: 1.08;
+      }
+
+      h3 {
+        line-height: 1.14;
+      }
+
+      .hero-grid {
+        gap: 1.3rem;
+      }
+
+      .hero-copy {
+        padding-bottom: 0;
+      }
+
+      .hero-instrument {
+        display: none;
+      }
+
+      .scroll-cue {
+        display: none;
+      }
+
+      .about-points,
+      .services-grid,
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .visual-frame,
+      .map-panel {
+        min-height: 25rem;
+      }
+
+      .services-grid {
+        gap: 0.8rem;
+      }
+
+      .service-card {
+        min-height: 21rem;
+      }
+
+      .icon-box {
+        margin-bottom: 2.6rem;
+      }
+
+      .ticker {
+        grid-template-columns: 1fr;
+      }
+
+      .floating-panel {
+        min-width: 10rem;
+      }
+
+      .panel-a { left: 5%; top: 6%; }
+      .panel-b { right: 5%; top: 41%; }
+      .panel-c { left: 5%; bottom: 7%; }
+
+      .process-stage {
+        min-height: 58rem;
+      }
+
+      .process-svg {
+        transform: scaleX(0.84);
+        transform-origin: center;
+      }
+
+      .step-card {
+        width: calc(100% - 2rem);
+        left: 1rem;
+        right: auto;
+      }
+
+      .step-1 { top: 4%; }
+      .step-2 { top: 27%; }
+      .step-3 { bottom: 25%; }
+      .step-4 { bottom: 4%; }
+
+      .team-rig {
+        min-height: auto;
+        margin-top: 2rem;
+        padding-bottom: 6rem;
+      }
+
+      .team-truck {
+        position: relative;
+        bottom: auto;
+        grid-template-columns: 1fr;
+        gap: 0;
+        transform: none;
+      }
+
+      .team-rig:hover .team-truck {
+        --rig-tilt: 0deg;
+      }
+
+      .trailer-shell {
+        min-height: auto;
+        padding: 1rem;
+        clip-path: polygon(0 0, 94% 0, 100% 7%, 100% 100%, 6% 100%, 0 93%);
+      }
+
+      .trailer-shell::after {
+        top: 0.7rem;
+        font-size: 1.35rem;
+      }
+
+      .team-grid {
+        padding-top: 2.2rem;
+      }
+
+      .team-card {
+        min-height: 13rem;
+      }
+
+      .team-icon {
+        width: 3.4rem;
+        height: 3.4rem;
+        margin-bottom: 1.8rem;
+      }
+
+      .team-cabin {
+        width: 58%;
+        min-height: 8.5rem;
+        margin-left: auto;
+        margin-top: -0.2rem;
+      }
+
+      html[dir="rtl"] .team-cabin {
+        margin-right: auto;
+        margin-left: 0;
+      }
+
+      .team-road {
+        bottom: 4rem;
+      }
+
+      .team-wheel {
+        width: 3.1rem;
+        height: 3.1rem;
+        bottom: 3.1rem;
+        border-width: 0.55rem;
+      }
+
+      .team-wheel.w1 { left: 10%; }
+      .team-wheel.w2 { left: 45%; }
+      .team-wheel.w3 { right: 12%; }
+
+      .team-status {
+        grid-template-columns: 1fr;
+        bottom: -0.5rem;
+      }
+
+      .footer-strip {
+        position: relative;
+        flex-direction: column;
+      }
+
+      .contact {
+        min-height: auto;
+        padding-bottom: 8.5rem;
+      }
+
+      .contact-details {
+        grid-template-columns: 1fr;
+        margin-top: 1.2rem;
+      }
+
+      .contact-detail span {
+        white-space: normal;
+        text-overflow: clip;
+      }
+
+      .contact h2 {
+        font-size: clamp(1.7rem, 8vw, 2.65rem);
+      }
+
+      .freight-lane {
+        bottom: 5.7rem;
+        height: 6rem;
+        opacity: 0.72;
+      }
+
+      .freight-truck {
+        width: 11.5rem;
+        height: 4.7rem;
+        left: -13rem;
+      }
+
+      .truck-trailer {
+        width: 7.2rem;
+        height: 2.55rem;
+      }
+
+      .truck-cabin {
+        width: 3.9rem;
+        height: 2.9rem;
+      }
+
+      .truck-wheel {
+        width: 1.25rem;
+        height: 1.25rem;
+        border-width: 0.28rem;
+      }
+
+      .truck-wheel.two {
+        left: 6rem;
+      }
+
+      .social-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.55rem;
+      }
+
+      .social-link {
+        justify-content: center;
+        padding: 0 0.45rem;
+      }
+
+      .social-link span {
+        font-size: 0.6rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="warehouse-scene" class="stage-canvas" aria-hidden="true"></canvas>
+  <div class="noise-wash" aria-hidden="true"></div>
+
+  <nav class="nav" aria-label="Primary navigation">
+    <a href="#hero" class="brand" aria-label="NEXGEN Logistics Solutions home">
+      <span class="brand-mark" aria-hidden="true"><img src="assets/logo-nexgen.png" alt=""></span>
+      <span class="brand-text">
+        <strong>NEXGEN</strong>
+        <span data-i18n="brandSubtitle">Logistics Solutions</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="#about" data-i18n="navAbout">About</a>
+      <a href="#services" data-i18n="navServices">Services</a>
+      <a href="#infrastructure" data-i18n="navInfrastructure">Infrastructure</a>
+      <a href="#process" data-i18n="navProcess">Process</a>
+      <a href="#contact" data-i18n="navContact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="toggle-btn" id="languageToggle" type="button" aria-label="Toggle Arabic language">AR</button>
+      <button class="toggle-btn" id="themeToggle" type="button" aria-label="Toggle light and dark mode">
+        <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v2"/><path d="M12 19v2"/><path d="M4.22 4.22l1.42 1.42"/><path d="m18.36 18.36 1.42 1.42"/><path d="M3 12h2"/><path d="M19 12h2"/><path d="m4.22 19.78 1.42-1.42"/><path d="m18.36 5.64 1.42-1.42"/><circle cx="12" cy="12" r="4"/></svg>
+      </button>
+      <a class="nav-cta" href="#contact" aria-label="Contact NEXGEN">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+      </a>
+    </div>
+  </nav>
+
+  <main class="site-shell">
+    <section id="hero" class="section hero">
+      <div class="section-inner hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-reveal data-i18n="heroEyebrow">2PL / 3PL / 4PL operations since 2020</p>
+          <h1 data-reveal data-i18n="heroTitle">Engineering the Future of <span class="accent">Logistics</span></h1>
+          <p data-reveal data-i18n="heroText">Integrated warehousing and supply chain solutions for high-velocity storage, distribution, and cold-chain precision across Saudi Arabia.</p>
+          <div class="hero-actions" data-reveal>
+            <a href="#process" class="button">
+              <span data-i18n="heroCta">Enter the flow</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+            </a>
+            <a href="#infrastructure" class="ghost-link"><span>50K</span> <em data-i18n="heroMetric">pallet positions</em></a>
+          </div>
+        </div>
+        <aside class="hero-instrument" data-reveal aria-label="Live logistics signal">
+          <div class="radar">
+            <div class="radar-core">
+              <strong>24/7</strong>
+              <span>Secure Ops</span>
+            </div>
+          </div>
+          <div class="ticker">
+            <div><strong>WMS</strong><span>Inventory</span></div>
+            <div><strong>RFID</strong><span>Tracking</span></div>
+            <div><strong>IoT</strong><span>Telemetry</span></div>
+          </div>
+        </aside>
+      </div>
+      <div class="scroll-cue">Scroll</div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="section-inner split">
+        <div class="visual-frame" data-reveal>
+          <div class="warehouse-loop" aria-hidden="true">
+            <div class="rack left"></div>
+            <div class="rack right"></div>
+            <div class="loader-track"></div>
+            <div class="loader-dot"></div>
+          </div>
+          <div class="holo-label">
+            <strong>Regional standard</strong>
+            <span>Safety, quality, maintenance, and delivery discipline held across NEXGEN facilities.</span>
+          </div>
+        </div>
+        <div class="copy-stack">
+          <p class="eyebrow" data-reveal data-i18n="aboutEyebrow">About NEXGEN</p>
+          <h2 data-reveal data-i18n="aboutTitle">Precision infrastructure for modern supply chains.</h2>
+          <p class="lead" data-reveal data-i18n="aboutText">NEXGEN Logistics Solutions is a leading provider of integrated warehousing and supply chain management services, delivering customized solutions that enhance operational efficiency, reduce costs, and improve overall supply chain performance.</p>
+          <div class="about-points">
+            <div class="about-point" data-reveal><strong data-i18n="aboutVisionTitle">Vision</strong><span data-i18n="aboutVisionText">To be a global leader in warehousing and logistics through innovative, sustainable, customer-centric solutions.</span></div>
+            <div class="about-point" data-reveal><strong data-i18n="aboutMissionTitle">Mission</strong><span data-i18n="aboutMissionText">Offer state-of-the-art storage and distribution solutions that meet dynamic market demands.</span></div>
+            <div class="about-point" data-reveal><strong data-i18n="aboutTechTitle">Technology</strong><span data-i18n="aboutTechText">Leverage WMS, RFID, IoT-enabled solutions, handheld units, and tracking systems.</span></div>
+            <div class="about-point" data-reveal><strong data-i18n="aboutPartnerTitle">Partnership</strong><span data-i18n="aboutPartnerText">Build long-term client partnerships by delivering excellence in service.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section services">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" data-reveal data-i18n="servicesEyebrow">Services</p>
+            <h2 data-reveal data-i18n="servicesTitle">Operational muscle with digital reflexes.</h2>
+          </div>
+          <p data-reveal data-i18n="servicesText">From cold storage to route planning, each service is designed as part of one connected logistics engine.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card" data-tilt data-reveal>
+            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-7h6v7"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg></div>
+            <h3 data-i18n="svc1Title">Warehousing</h3>
+            <p data-i18n="svc1Text">Ambient, temperature-controlled, and cold storage facilities with advanced racking, scalable inventory management, and secure product care.</p>
+            <div class="service-meta">Storage intelligence</div>
+          </article>
+          <article class="service-card" data-tilt data-reveal>
+            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17h4V5H2v12h3"/><path d="M14 17h1"/><path d="M15 17h4"/><path d="M14 8h4l4 5v4h-3"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
+            <h3 data-i18n="svc2Title">Distribution</h3>
+            <p data-i18n="svc2Text">Last-mile delivery, cross-docking, transshipment, efficient route planning, and fleet management tuned for market velocity.</p>
+            <div class="service-meta">Movement control</div>
+          </article>
+          <article class="service-card" data-tilt data-reveal>
+            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div>
+            <h3 data-i18n="svc3Title">3PL</h3>
+            <p data-i18n="svc3Text">Integrated end-to-end supply chain management for clients that need a flexible partner across warehousing, transport, and fulfillment.</p>
+            <div class="service-meta">End to end</div>
+          </article>
+          <article class="service-card" data-tilt data-reveal>
+            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="m17 8-5-5-5 5"/><path d="M4 14h16"/><path d="m7 19-3-5 3-5"/><path d="m17 19 3-5-3-5"/></svg></div>
+            <h3 data-i18n="svc4Title">Value Added</h3>
+            <p data-i18n="svc4Text">Packaging, labeling, kitting, assembly, quality inspection, returns management, and process enhancement at the point of need.</p>
+            <div class="service-meta">VAS layer</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="infrastructure" class="section infrastructure">
+      <div class="section-inner infra-grid">
+        <div>
+          <p class="eyebrow" data-reveal data-i18n="infraEyebrow">Infrastructure</p>
+          <h2 data-reveal data-i18n="infraTitle">50,000 pallet positions. One connected operating system.</h2>
+          <p data-reveal data-i18n="infraText">NEXGEN facilities comprise frozen, chilled, ambient, and dry storage, equipped with dock levelers, temperature monitoring, CCTV, modern office space, backup generators, and 24x7 security.</p>
+          <div class="counter-wall">
+            <div class="counter-panel" data-reveal>
+              <span class="counter" data-count="50000">0</span>
+              <span class="counter-label" data-i18n="infraCounter1">Pallet positions across multiple locations</span>
+            </div>
+            <div class="counter-panel" data-reveal>
+              <span class="counter" data-count="25">0</span>
+              <span class="counter-label" data-i18n="infraCounter2">Years of core industrial experience</span>
+            </div>
+          </div>
+        </div>
+        <div class="map-panel" data-reveal>
+          <svg viewBox="0 0 700 560" preserveAspectRatio="none" aria-hidden="true">
+            <path class="map-line" d="M96 150 C210 48 310 270 434 222 S590 72 616 174 C650 312 536 336 566 436 C460 498 364 330 218 422 C150 454 92 358 96 150"/>
+            <path class="map-pulse" d="M96 150 C210 48 310 270 434 222 S590 72 616 174 C650 312 536 336 566 436 C460 498 364 330 218 422 C150 454 92 358 96 150"/>
+          </svg>
+          <span class="map-node"></span><span class="map-node"></span><span class="map-node"></span><span class="map-node"></span><span class="map-node"></span>
+          <div class="floating-panel panel-a"><strong>Frozen</strong><span>Temperature controlled storage with monitoring.</span></div>
+          <div class="floating-panel panel-b"><strong>WMS + RFID</strong><span>Inventory visibility and movement accuracy.</span></div>
+          <div class="floating-panel panel-c"><strong>24x7 Security</strong><span>CCTV, guards, and facility continuity.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section clients" aria-label="Clients and partners">
+      <div class="section-inner">
+        <p class="eyebrow" data-reveal data-i18n="clientsEyebrow">Clients and partners</p>
+        <h2 data-reveal data-i18n="clientsTitle">Trusted by demanding supply chains.</h2>
+      </div>
+      <div class="logo-wall" data-reveal>
+        <div class="logo-track">
+          <div class="client-logo"><img src="assets/client-logo-01.png" alt="Saudi Snack Co. Ltd. PEPSICO logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-02.png" alt="Mena Gulf Trading logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-03.png" alt="Al Kawdir Trading logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-04.png" alt="Khalaf Khalid Trading logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-05.png" alt="Loloat Alfoz Trading logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-06.png" alt="MEZZAN Logistics logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-07.png" alt="Nawami Agriculture logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-08.png" alt="Al Qama International Trading logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-09.png" alt="Masdar Al-Hayat Fonte logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-10.png" alt="Mapei Saudi Arabia logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-11.png" alt="Arison Trading logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-12.png" alt="SADR Logistics logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-13.png" alt="Partner logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-01.png" alt="Saudi Snack Co. Ltd. PEPSICO logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-02.png" alt="Mena Gulf Trading logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-03.png" alt="Al Kawdir Trading logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-04.png" alt="Khalaf Khalid Trading logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-05.png" alt="Loloat Alfoz Trading logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-06.png" alt="MEZZAN Logistics logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-07.png" alt="Nawami Agriculture logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-08.png" alt="Al Qama International Trading logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-09.png" alt="Masdar Al-Hayat Fonte logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-10.png" alt="Mapei Saudi Arabia logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-11.png" alt="Arison Trading logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-12.png" alt="SADR Logistics logo"></div>
+          <div class="client-logo"><img src="assets/client-logo-13.png" alt="Partner logo"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section process">
+      <div class="section-inner">
+        <p class="eyebrow" data-reveal data-i18n="processEyebrow">Process flow</p>
+        <h2 data-reveal data-i18n="processTitle">Factory to customer, choreographed as one continuous signal.</h2>
+        <div class="process-stage" id="processStage" data-reveal>
+          <svg class="process-svg" viewBox="0 0 1200 820" preserveAspectRatio="none" aria-hidden="true">
+            <path id="processPath" class="process-path" d="M115 150 C290 40 430 255 555 255 C760 255 725 105 930 140 C1100 168 1075 390 914 410 C690 438 636 535 516 606 C356 704 184 628 212 480 C238 343 432 384 520 446 C700 575 877 604 1040 696"/>
+            <path id="processProgress" class="process-progress" d="M115 150 C290 40 430 255 555 255 C760 255 725 105 930 140 C1100 168 1075 390 914 410 C690 438 636 535 516 606 C356 704 184 628 212 480 C238 343 432 384 520 446 C700 575 877 604 1040 696"/>
+            <circle id="processPulse" class="process-pulse" r="8" cx="115" cy="150"></circle>
+          </svg>
+          <article class="step-card step-1">
+            <strong>01</strong>
+            <h3 data-i18n="step1Title">Factory</h3>
+            <p data-i18n="step1Text">Products enter the flow with receiving discipline, documentation clarity, and inspection readiness.</p>
+          </article>
+          <article class="step-card step-2">
+            <strong>02</strong>
+            <h3 data-i18n="step2Title">Warehouse</h3>
+            <p data-i18n="step2Text">Inventory is stored across frozen, chilled, ambient, and dry environments with WMS visibility.</p>
+          </article>
+          <article class="step-card step-3">
+            <strong>03</strong>
+            <h3 data-i18n="step3Title">Distribution</h3>
+            <p data-i18n="step3Text">Cross-docking, fleet planning, and route intelligence convert stored goods into controlled movement.</p>
+          </article>
+          <article class="step-card step-4">
+            <strong>04</strong>
+            <h3 data-i18n="step4Title">Customer</h3>
+            <p data-i18n="step4Text">Final delivery closes the loop with care, accuracy, compliance, and measurable service quality.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section team">
+      <div class="section-inner">
+        <p class="eyebrow" data-reveal data-i18n="teamEyebrow">Team</p>
+        <h2 data-reveal data-i18n="teamTitle">Specialists built for precision, safety, and time-critical fulfillment.</h2>
+        <p class="lead" data-reveal data-i18n="teamText">The NEXGEN warehouse team manages inventory, storage, and distribution across food, non-food, and temperature-sensitive goods, with specialized cold-chain expertise and over 25 years of core industrial experience.</p>
+        <div class="team-rig" data-reveal>
+          <div class="team-road" aria-hidden="true"></div>
+          <div class="team-truck">
+            <div class="trailer-shell">
+              <div class="team-grid">
+                <article class="team-card" data-tilt>
+                  <div class="team-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-7h6v7"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg></div>
+                  <div class="team-info"><h3 data-i18n="teamCard1Title">Warehouse Command</h3><p data-i18n="teamCard1Text">Inventory accuracy, storage discipline, and daily operational control.</p></div>
+                </article>
+                <article class="team-card" data-tilt>
+                  <div class="team-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4v4a2 2 0 0 0 2 2h4"/><path d="M5 8h6"/><path d="M5 12h4"/><path d="M5 16h6"/><path d="M19 22H5a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9l7 7v11a2 2 0 0 1-2 2Z"/><path d="M15 16a3 3 0 1 0 6 0 3 3 0 0 0-6 0Z"/></svg></div>
+                  <div class="team-info"><h3 data-i18n="teamCard2Title">Cold Chain Experts</h3><p data-i18n="teamCard2Text">Temperature-sensitive handling with quality and compliance focus.</p></div>
+                </article>
+                <article class="team-card" data-tilt>
+                  <div class="team-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17h4V5H2v12h3"/><path d="M14 17h1"/><path d="M15 17h4"/><path d="M14 8h4l4 5v4h-3"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
+                  <div class="team-info"><h3 data-i18n="teamCard3Title">Distribution Leads</h3><p data-i18n="teamCard3Text">Fleet, route, dispatch, and last-mile coordination.</p></div>
+                </article>
+                <article class="team-card" data-tilt>
+                  <div class="team-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M12 4h9"/><path d="M4 9h16"/><path d="M4 15h16"/><circle cx="7" cy="4" r="2"/><circle cx="7" cy="20" r="2"/></svg></div>
+                  <div class="team-info"><h3 data-i18n="teamCard4Title">Systems Operators</h3><p data-i18n="teamCard4Text">WMS, handheld units, tracking data, and fulfillment visibility.</p></div>
+                </article>
+              </div>
+            </div>
+            <div class="team-cabin" aria-hidden="true"></div>
+          </div>
+          <span class="team-wheel w1" aria-hidden="true"></span>
+          <span class="team-wheel w2" aria-hidden="true"></span>
+          <span class="team-wheel w3" aria-hidden="true"></span>
+          <div class="team-status" aria-label="Team operating signal">
+            <div><strong>24/7</strong><span data-i18n="teamStatus1">Secure operations</span></div>
+            <div><strong>25+</strong><span data-i18n="teamStatus2">Years experience</span></div>
+            <div><strong>WMS</strong><span data-i18n="teamStatus3">Live visibility</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="freight-lane" aria-hidden="true">
+        <div class="freight-road"></div>
+        <div class="freight-truck">
+          <div class="truck-trailer"></div>
+          <div class="truck-cabin"></div>
+          <span class="truck-wheel one"></span>
+          <span class="truck-wheel two"></span>
+          <span class="truck-wheel three"></span>
+        </div>
+      </div>
+      <div class="section-inner contact-grid">
+        <div>
+          <div class="contact-logo" data-reveal><img src="assets/logo-nexgen.png" alt="NEXGEN Logistics Solutions"></div>
+          <p class="eyebrow" data-reveal data-i18n="contactEyebrow">Contact</p>
+          <h2 data-reveal data-i18n="contactTitle">Ready to move smarter?</h2>
+          <div class="contact-details">
+            <div class="contact-detail" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="contactAddress">Company address: Crown Bridge Investments, P.O Box No:14519, Al Kharj Road, Riyadh, Kingdom of Saudi Arabia.</span></div>
+            <a class="contact-detail" href="tel:+966565652159" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.62 2.61a2 2 0 0 1-.45 2.11L8 9.67a16 16 0 0 0 6.33 6.33l1.23-1.23a2 2 0 0 1 2.11-.45c.84.29 1.71.5 2.61.62A2 2 0 0 1 22 16.92Z"/></svg><span>+966565652159</span></a>
+            <a class="contact-detail" href="https://wa.me/966565652159" target="_blank" rel="noopener" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.4-5.1a8.5 8.5 0 1 1 3.2 3.3Z"/><path d="M8.8 8.7c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.6c.1.3.1.5-.1.7l-.4.5c-.1.1-.2.3-.1.5.4.8 1.1 1.6 2.1 2.2.2.1.4.1.5-.1l.6-.7c.2-.2.4-.3.7-.2l1.6.7c.4.2.4.4.4.6 0 .9-.7 1.6-1.7 1.6-2.8 0-6.8-3.4-6.8-6.6 0-.4.1-.7.3-1Z"/></svg><span>WhatsApp</span></a>
+            <div class="contact-detail" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-10 6L2 7"/></svg><span>rkk@nexgenlogisolutions.com</span></div>
+          </div>
+          <div class="social-grid" aria-label="Social media">
+            <a class="social-link" href="#contact" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.9H3.7V20h3.24V8.9ZM5.32 4a1.88 1.88 0 1 0 0 3.76A1.88 1.88 0 0 0 5.32 4Zm15 9.64c0-3-1.6-4.98-4.23-4.98-1.94 0-2.8 1.06-3.28 1.8V8.9H9.7V20h3.24v-5.5c0-1.46.28-2.88 2.1-2.88 1.78 0 1.8 1.67 1.8 2.97V20h3.25v-6.36Z"/></svg><span>LinkedIn</span></a>
+            <a class="social-link" href="#contact" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.8"/><path d="M17.5 6.5h.01"/></svg><span>Instagram</span></a>
+            <a class="social-link" href="#contact" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.3 3c.25 2.1 1.45 3.64 3.65 3.78v3.18a7.05 7.05 0 0 1-3.6-1.05v5.85c0 3.02-2.1 5.24-5.2 5.24-3.06 0-5.1-2.02-5.1-4.7 0-2.88 2.27-4.9 5.55-4.64v3.24c-1.43-.2-2.34.43-2.34 1.4 0 .9.75 1.48 1.75 1.48 1.16 0 1.92-.68 1.92-2.1V3h3.37Z"/></svg><span>TikTok</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-strip">
+        <span>NEXGEN Logistics Solutions</span>
+        <span data-i18n="footerSite">www.nexgenlogisolutions.com</span>
+      </div>
+    </section>
+  </main>
+
+  <script type="module">
+    import * as THREE from "https://esm.sh/three@0.163.0";
+    import { gsap } from "https://esm.sh/gsap@3.12.5";
+    import { ScrollTrigger } from "https://esm.sh/gsap@3.12.5/ScrollTrigger";
+    import Lenis from "https://esm.sh/@studio-freight/lenis@1.0.42";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isMobile = window.matchMedia("(max-width: 720px)").matches;
+    const lenis = new Lenis({
+      duration: reducedMotion ? 0 : 1.18,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: "vertical",
+      smoothWheel: !reducedMotion
+    });
+
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+
+    const nav = document.querySelector(".nav");
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("is-scrolled", window.scrollY > 30);
+    }, { passive: true });
+
+    const translations = {
+      en: {
+        brandSubtitle: "Logistics Solutions",
+        navAbout: "About",
+        navServices: "Services",
+        navInfrastructure: "Infrastructure",
+        navProcess: "Process",
+        navContact: "Contact",
+        heroEyebrow: "2PL / 3PL / 4PL operations since 2020",
+        heroTitle: "Engineering the Future of <span class=\"accent\">Logistics</span>",
+        heroText: "Integrated warehousing and supply chain solutions for high-velocity storage, distribution, and cold-chain precision across Saudi Arabia.",
+        heroCta: "Enter the flow",
+        heroMetric: "pallet positions",
+        aboutEyebrow: "About NEXGEN",
+        aboutTitle: "Precision infrastructure for modern supply chains.",
+        aboutText: "NEXGEN Logistics Solutions is a leading provider of integrated warehousing and supply chain management services, delivering customized solutions that enhance operational efficiency, reduce costs, and improve overall supply chain performance.",
+        aboutVisionTitle: "Vision",
+        aboutVisionText: "To be a global leader in warehousing and logistics through innovative, sustainable, customer-centric solutions.",
+        aboutMissionTitle: "Mission",
+        aboutMissionText: "Offer state-of-the-art storage and distribution solutions that meet dynamic market demands.",
+        aboutTechTitle: "Technology",
+        aboutTechText: "Leverage WMS, RFID, IoT-enabled solutions, handheld units, and tracking systems.",
+        aboutPartnerTitle: "Partnership",
+        aboutPartnerText: "Build long-term client partnerships by delivering excellence in service.",
+        servicesEyebrow: "Services",
+        servicesTitle: "Operational muscle with digital reflexes.",
+        servicesText: "From cold storage to route planning, each service is designed as part of one connected logistics engine.",
+        svc1Title: "Warehousing",
+        svc1Text: "Ambient, temperature-controlled, and cold storage facilities with advanced racking, scalable inventory management, and secure product care.",
+        svc2Title: "Distribution",
+        svc2Text: "Last-mile delivery, cross-docking, transshipment, efficient route planning, and fleet management tuned for market velocity.",
+        svc3Title: "3PL",
+        svc3Text: "Integrated end-to-end supply chain management for clients that need a flexible partner across warehousing, transport, and fulfillment.",
+        svc4Title: "Value Added",
+        svc4Text: "Packaging, labeling, kitting, assembly, quality inspection, returns management, and process enhancement at the point of need.",
+        infraEyebrow: "Infrastructure",
+        infraTitle: "50,000 pallet positions. One connected operating system.",
+        infraText: "NEXGEN facilities comprise frozen, chilled, ambient, and dry storage, equipped with dock levelers, temperature monitoring, CCTV, modern office space, backup generators, and 24x7 security.",
+        infraCounter1: "Pallet positions across multiple locations",
+        infraCounter2: "Years of core industrial experience",
+        clientsEyebrow: "Clients and partners",
+        clientsTitle: "Trusted by demanding supply chains.",
+        processEyebrow: "Process flow",
+        processTitle: "Factory to customer, choreographed as one continuous signal.",
+        step1Title: "Factory",
+        step1Text: "Products enter the flow with receiving discipline, documentation clarity, and inspection readiness.",
+        step2Title: "Warehouse",
+        step2Text: "Inventory is stored across frozen, chilled, ambient, and dry environments with WMS visibility.",
+        step3Title: "Distribution",
+        step3Text: "Cross-docking, fleet planning, and route intelligence convert stored goods into controlled movement.",
+        step4Title: "Customer",
+        step4Text: "Final delivery closes the loop with care, accuracy, compliance, and measurable service quality.",
+        teamEyebrow: "Team",
+        teamTitle: "Specialists built for precision, safety, and time-critical fulfillment.",
+        teamText: "The NEXGEN warehouse team manages inventory, storage, and distribution across food, non-food, and temperature-sensitive goods, with specialized cold-chain expertise and over 25 years of core industrial experience.",
+        teamCard1Title: "Warehouse Command",
+        teamCard1Text: "Inventory accuracy, storage discipline, and daily operational control.",
+        teamCard2Title: "Cold Chain Experts",
+        teamCard2Text: "Temperature-sensitive handling with quality and compliance focus.",
+        teamCard3Title: "Distribution Leads",
+        teamCard3Text: "Fleet, route, dispatch, and last-mile coordination.",
+        teamCard4Title: "Systems Operators",
+        teamCard4Text: "WMS, handheld units, tracking data, and fulfillment visibility.",
+        teamStatus1: "Secure operations",
+        teamStatus2: "Years experience",
+        teamStatus3: "Live visibility",
+        contactEyebrow: "Contact",
+        contactTitle: "Ready to move smarter?",
+        contactAddress: "Company address: Crown Bridge Investments, P.O Box No:14519, Al Kharj Road, Riyadh, Kingdom of Saudi Arabia.",
+        fieldName: "Name",
+        fieldEmail: "Email",
+        fieldCompany: "Company",
+        fieldMessage: "Tell us what needs to move",
+        sendInquiry: "Send inquiry",
+        footerSite: "www.nexgenlogisolutions.com"
+      },
+      ar: {
+        brandSubtitle: "حلول لوجستية",
+        navAbout: "عن الشركة",
+        navServices: "الخدمات",
+        navInfrastructure: "البنية",
+        navProcess: "الرحلة",
+        navContact: "تواصل",
+        heroEyebrow: "عمليات 2PL / 3PL / 4PL منذ 2020",
+        heroTitle: "نصمم مستقبل <span class=\"accent\">الخدمات اللوجستية</span>",
+        heroText: "حلول متكاملة للتخزين وسلاسل الإمداد، مصممة لحركة أسرع ودقة أعلى وتشغيل بارد وآمن داخل المملكة العربية السعودية.",
+        heroCta: "ادخل مسار الحركة",
+        heroMetric: "موقع تخزين",
+        aboutEyebrow: "عن نكسجن",
+        aboutTitle: "بنية تشغيل دقيقة لسلاسل الإمداد الحديثة.",
+        aboutText: "تقدم NEXGEN Logistics Solutions خدمات متكاملة في إدارة المستودعات وسلاسل الإمداد، بحلول مخصصة ترفع الكفاءة التشغيلية وتخفض التكلفة وتحسن أداء سلسلة التوريد.",
+        aboutVisionTitle: "الرؤية",
+        aboutVisionText: "أن نكون روادا عالميا في التخزين والخدمات اللوجستية عبر حلول مبتكرة ومستدامة تتمحور حول العميل.",
+        aboutMissionTitle: "الرسالة",
+        aboutMissionText: "تقديم حلول تخزين وتوزيع متطورة تلبي متطلبات السوق المتغيرة.",
+        aboutTechTitle: "التقنية",
+        aboutTechText: "استخدام WMS و RFID وحلول IoT والوحدات المحمولة وأنظمة التتبع الحديثة.",
+        aboutPartnerTitle: "الشراكة",
+        aboutPartnerText: "بناء شراكات طويلة الأمد مع العملاء عبر التميز في الخدمة والتنفيذ.",
+        servicesEyebrow: "الخدمات",
+        servicesTitle: "قوة تشغيلية باستجابة رقمية.",
+        servicesText: "من التخزين البارد إلى تخطيط المسارات، كل خدمة جزء من محرك لوجستي واحد متصل.",
+        svc1Title: "التخزين",
+        svc1Text: "مرافق تخزين جافة ومبردة ومجمدة بدرجات حرارة مضبوطة، مع أنظمة رفوف متقدمة وإدارة مخزون آمنة وقابلة للتوسع.",
+        svc2Title: "التوزيع",
+        svc2Text: "توصيل الميل الأخير، والعبور، وإعادة الشحن، وتخطيط المسارات وإدارة الأسطول بكفاءة عالية.",
+        svc3Title: "خدمات 3PL",
+        svc3Text: "إدارة متكاملة لسلسلة الإمداد من البداية للنهاية للشركات التي تحتاج شريكا مرنا في التخزين والنقل والتنفيذ.",
+        svc4Title: "خدمات القيمة المضافة",
+        svc4Text: "التعبئة، والوسم، والتجميع، والفحص، وإدارة المرتجعات، وتحسين العمليات في نقطة الحاجة.",
+        infraEyebrow: "البنية التحتية",
+        infraTitle: "50,000 موقع تخزين. نظام تشغيل واحد متصل.",
+        infraText: "تضم مرافق نكسجن تخزينا مجمدا ومبردا وجافا وبيئات عادية، مع Dock Levelers ومراقبة حرارة وكاميرات CCTV ومكاتب حديثة ومولدات احتياطية وحراسة 24/7.",
+        infraCounter1: "موقع تخزين عبر عدة مواقع",
+        infraCounter2: "عاما من الخبرة الصناعية الأساسية",
+        clientsEyebrow: "العملاء والشركاء",
+        clientsTitle: "ثقة سلاسل إمداد عالية المتطلبات.",
+        processEyebrow: "مسار العملية",
+        processTitle: "من المصنع إلى العميل كإشارة تشغيل واحدة متصلة.",
+        step1Title: "المصنع",
+        step1Text: "تدخل المنتجات المسار باستلام منظم ووثائق واضحة وجاهزية للفحص.",
+        step2Title: "المستودع",
+        step2Text: "يتم تخزين المخزون في بيئات مجمدة ومبردة وجافة وعادية مع رؤية كاملة عبر WMS.",
+        step3Title: "التوزيع",
+        step3Text: "العبور وتخطيط الأسطول وذكاء المسارات يحول المخزون إلى حركة دقيقة.",
+        step4Title: "العميل",
+        step4Text: "يغلق التسليم النهائي الدورة بعناية ودقة وامتثال وجودة خدمة قابلة للقياس.",
+        teamEyebrow: "الفريق",
+        teamTitle: "خبراء للدقة والسلامة والتنفيذ الحساس للوقت.",
+        teamText: "يدير فريق مستودعات نكسجن المخزون والتخزين والتوزيع عبر منتجات غذائية وغير غذائية وحساسة للحرارة، مع خبرة متخصصة في سلسلة التبريد وأكثر من 25 عاما من الخبرة الصناعية.",
+        teamCard1Title: "قيادة المستودع",
+        teamCard1Text: "دقة المخزون، وانضباط التخزين، والتحكم اليومي في التشغيل.",
+        teamCard2Title: "خبراء سلسلة التبريد",
+        teamCard2Text: "تعامل حساس للحرارة مع تركيز على الجودة والامتثال.",
+        teamCard3Title: "قادة التوزيع",
+        teamCard3Text: "تنسيق الأسطول والمسارات والإرسال والتوصيل للميل الأخير.",
+        teamCard4Title: "مشغلو الأنظمة",
+        teamCard4Text: "إدارة WMS والوحدات المحمولة وبيانات التتبع ورؤية التنفيذ.",
+        teamStatus1: "تشغيل آمن",
+        teamStatus2: "سنوات خبرة",
+        teamStatus3: "رؤية مباشرة",
+        contactEyebrow: "تواصل معنا",
+        contactTitle: "جاهز لحركة أذكى؟",
+        contactAddress: "عنوان الشركة: Crown Bridge Investments، ص.ب 14519، طريق الخرج، الرياض، المملكة العربية السعودية.",
+        fieldName: "الاسم",
+        fieldEmail: "البريد الإلكتروني",
+        fieldCompany: "الشركة",
+        fieldMessage: "ما الذي تريد نقله؟",
+        sendInquiry: "إرسال الطلب",
+        footerSite: "www.nexgenlogisolutions.com"
+      }
+    };
+
+    const languageToggle = document.querySelector("#languageToggle");
+    const themeToggle = document.querySelector("#themeToggle");
+    const applyLanguage = (lang) => {
+      const copy = translations[lang];
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      document.body.classList.toggle("is-ar", lang === "ar");
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.dataset.i18n;
+        if (copy[key]) element.innerHTML = copy[key];
+      });
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        const key = element.dataset.i18nPlaceholder;
+        if (copy[key]) element.placeholder = copy[key];
+      });
+      languageToggle.textContent = lang === "ar" ? "EN" : "AR";
+      localStorage.setItem("nexgen-lang", lang);
+      ScrollTrigger.refresh();
+    };
+
+    const applyTheme = (theme) => {
+      const light = theme === "light";
+      document.body.classList.toggle("theme-light", light);
+      themeToggle.setAttribute("aria-label", light ? "Switch to dark mode" : "Switch to light mode");
+      localStorage.setItem("nexgen-theme", theme);
+    };
+
+    applyLanguage(localStorage.getItem("nexgen-lang") || "en");
+    applyTheme(localStorage.getItem("nexgen-theme") || "dark");
+
+    languageToggle.addEventListener("click", () => {
+      applyLanguage(document.documentElement.lang === "ar" ? "en" : "ar");
+    });
+
+    themeToggle.addEventListener("click", () => {
+      applyTheme(document.body.classList.contains("theme-light") ? "dark" : "light");
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const target = document.querySelector(link.getAttribute("href"));
+        if (!target) return;
+        event.preventDefault();
+        lenis.scrollTo(target, { offset: 0, duration: 1.2 });
+      });
+    });
+
+    const canvas = document.querySelector("#warehouse-scene");
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: "high-performance" });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.25 : 1.65));
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x071020, isMobile ? 0.033 : 0.026);
+
+    const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 130);
+    camera.position.set(0, 4.8, 18);
+    camera.lookAt(0, 2.2, -9);
+
+    const ambient = new THREE.AmbientLight(0xffffff, 0.42);
+    const key = new THREE.DirectionalLight(0xffffff, 1.2);
+    key.position.set(8, 12, 8);
+    const orange = new THREE.PointLight(0xf05a28, 20, 38);
+    orange.position.set(-7, 4, 5);
+    const blue = new THREE.PointLight(0x4067b2, 14, 42);
+    blue.position.set(7, 5, -12);
+    scene.add(ambient, key, orange, blue);
+
+    const warehouse = new THREE.Group();
+    scene.add(warehouse);
+
+    const matFloor = new THREE.MeshStandardMaterial({ color: 0x111b35, roughness: 0.72, metalness: 0.18 });
+    const matMetal = new THREE.MeshStandardMaterial({ color: 0x243b6b, roughness: 0.44, metalness: 0.38 });
+    const matOrange = new THREE.MeshStandardMaterial({ color: 0xf05a28, roughness: 0.38, metalness: 0.22, emissive: 0x4a1405, emissiveIntensity: 0.42 });
+    const matWhite = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.5, metalness: 0.08, emissive: 0x111111, emissiveIntensity: 0.08 });
+    const matBox = new THREE.MeshStandardMaterial({ color: 0x9d7249, roughness: 0.75, metalness: 0.02 });
+
+    const floor = new THREE.Mesh(new THREE.PlaneGeometry(42, 88, 24, 24), matFloor);
+    floor.rotation.x = -Math.PI / 2;
+    floor.position.z = -18;
+    warehouse.add(floor);
+
+    const grid = new THREE.GridHelper(70, 42, 0xf05a28, 0x324775);
+    grid.material.opacity = 0.2;
+    grid.material.transparent = true;
+    grid.position.y = 0.02;
+    grid.position.z = -18;
+    warehouse.add(grid);
+
+    function makeRack(x, z, side = 1) {
+      const group = new THREE.Group();
+      group.position.set(x, 0, z);
+      const uprightGeo = new THREE.BoxGeometry(0.15, 5.8, 0.15);
+      const beamGeo = new THREE.BoxGeometry(2.8, 0.13, 0.13);
+      for (let i = 0; i < 4; i++) {
+        const xp = i < 2 ? -1.35 : 1.35;
+        const zp = i % 2 === 0 ? -0.58 : 0.58;
+        const upright = new THREE.Mesh(uprightGeo, matOrange);
+        upright.position.set(xp, 2.9, zp);
+        group.add(upright);
+      }
+      for (let y = 0.9; y <= 5.1; y += 1.4) {
+        [-0.6, 0.6].forEach((zp) => {
+          const beam = new THREE.Mesh(beamGeo, matMetal);
+          beam.position.set(0, y, zp);
+          group.add(beam);
+        });
+      }
+      for (let level = 0; level < 3; level++) {
+        for (let slot = 0; slot < 2; slot++) {
+          const box = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.55, 0.85), slot % 2 ? matWhite : matBox);
+          box.position.set(-0.62 + slot * 1.24, 1.25 + level * 1.38, -0.03);
+          group.add(box);
+        }
+      }
+      group.rotation.y = side * 0.04;
+      return group;
+    }
+
+    const rackCount = isMobile ? 7 : 12;
+    for (let i = 0; i < rackCount; i++) {
+      const z = -4 - i * 5.2;
+      warehouse.add(makeRack(-7.2, z, 1));
+      warehouse.add(makeRack(7.2, z, -1));
+    }
+
+    const floating = new THREE.Group();
+    warehouse.add(floating);
+    const floatCount = isMobile ? 10 : 18;
+    for (let i = 0; i < floatCount; i++) {
+      const geo = new THREE.BoxGeometry(
+        0.7 + Math.random() * 1.4,
+        0.35 + Math.random() * 0.7,
+        0.65 + Math.random() * 1.5
+      );
+      const mesh = new THREE.Mesh(geo, i % 4 === 0 ? matOrange : (i % 3 === 0 ? matWhite : matBox));
+      mesh.position.set((Math.random() - 0.5) * 13, 1.2 + Math.random() * 5.6, -2 - Math.random() * 52);
+      mesh.rotation.set(Math.random() * 0.3, Math.random() * 0.9, Math.random() * 0.2);
+      mesh.userData = { speed: 0.35 + Math.random() * 0.7, baseY: mesh.position.y, drift: Math.random() * Math.PI * 2 };
+      floating.add(mesh);
+    }
+
+    const particleCount = isMobile ? 90 : 190;
+    const particlePositions = new Float32Array(particleCount * 3);
+    for (let i = 0; i < particleCount; i++) {
+      particlePositions[i * 3] = (Math.random() - 0.5) * 30;
+      particlePositions[i * 3 + 1] = Math.random() * 9;
+      particlePositions[i * 3 + 2] = 8 - Math.random() * 72;
+    }
+    const particleGeo = new THREE.BufferGeometry();
+    particleGeo.setAttribute("position", new THREE.BufferAttribute(particlePositions, 3));
+    const particleMat = new THREE.PointsMaterial({ color: 0xffffff, size: isMobile ? 0.035 : 0.045, transparent: true, opacity: 0.38, depthWrite: false });
+    const particles = new THREE.Points(particleGeo, particleMat);
+    scene.add(particles);
+
+    const corridorLights = new THREE.Group();
+    warehouse.add(corridorLights);
+    for (let i = 0; i < 18; i++) {
+      const lamp = new THREE.Mesh(new THREE.BoxGeometry(3.8, 0.04, 0.08), matWhite);
+      lamp.position.set(0, 6.8, 3 - i * 4);
+      lamp.material = matWhite;
+      corridorLights.add(lamp);
+    }
+
+    const mouse = { x: 0, y: 0 };
+    window.addEventListener("pointermove", (event) => {
+      mouse.x = (event.clientX / window.innerWidth - 0.5) * 2;
+      mouse.y = (event.clientY / window.innerHeight - 0.5) * 2;
+      document.documentElement.style.setProperty("--gx", `${event.clientX / window.innerWidth * 100}%`);
+      document.documentElement.style.setProperty("--gy", `${event.clientY / window.innerHeight * 100}%`);
+    }, { passive: true });
+
+    let scrollProgress = 0;
+    ScrollTrigger.create({
+      trigger: ".hero",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+      onUpdate: (self) => { scrollProgress = self.progress; }
+    });
+
+    function animateThree(time) {
+      const t = time * 0.001;
+      camera.position.z = THREE.MathUtils.lerp(camera.position.z, 18 - scrollProgress * 15, 0.045);
+      camera.position.y = THREE.MathUtils.lerp(camera.position.y, 4.8 - scrollProgress * 1.5 + mouse.y * -0.25, 0.035);
+      camera.position.x = THREE.MathUtils.lerp(camera.position.x, mouse.x * 0.45, 0.035);
+      camera.lookAt(mouse.x * 0.6, 2.2 - scrollProgress * 0.6, -12 - scrollProgress * 18);
+      orange.intensity = 18 + Math.sin(t * 1.4) * 4;
+      blue.position.x = 7 + Math.sin(t * 0.4) * 3;
+      floating.children.forEach((mesh, index) => {
+        mesh.rotation.x += 0.002 * mesh.userData.speed;
+        mesh.rotation.y += 0.003 * mesh.userData.speed;
+        mesh.position.y = mesh.userData.baseY + Math.sin(t * mesh.userData.speed + mesh.userData.drift) * 0.22;
+        mesh.position.z += 0.006 * mesh.userData.speed;
+        if (mesh.position.z > 9) mesh.position.z = -58 - index * 0.3;
+      });
+      particles.rotation.y = Math.sin(t * 0.08) * 0.06;
+      particles.position.z = scrollProgress * 4;
+      warehouse.rotation.y = mouse.x * 0.018;
+      renderer.render(scene, camera);
+      requestAnimationFrame(animateThree);
+    }
+    requestAnimationFrame(animateThree);
+
+    window.addEventListener("resize", () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth < 720 ? 1.25 : 1.65));
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      ScrollTrigger.refresh();
+    });
+
+    gsap.utils.toArray("[data-reveal]").forEach((element) => {
+      gsap.to(element, {
+        opacity: 1,
+        y: 0,
+        duration: 1.1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: element,
+          start: "top 86%",
+          once: true
+        }
+      });
+    });
+
+    gsap.utils.toArray(".copy-stack [data-reveal], .about-point").forEach((element, index) => {
+      gsap.fromTo(element, { opacity: 0, y: 28 }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.85,
+        delay: index * 0.05,
+        ease: "power3.out",
+        scrollTrigger: { trigger: ".about", start: "top 62%", once: true }
+      });
+    });
+
+    document.querySelectorAll("[data-tilt]").forEach((card) => {
+      card.addEventListener("pointermove", (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width;
+        const y = (event.clientY - rect.top) / rect.height;
+        card.style.setProperty("--mx", `${x * 100}%`);
+        card.style.setProperty("--my", `${y * 100}%`);
+        card.style.setProperty("--ry", `${(x - 0.5) * 12}deg`);
+        card.style.setProperty("--rx", `${(0.5 - y) * 10}deg`);
+      });
+      card.addEventListener("pointerleave", () => {
+        card.style.setProperty("--ry", "0deg");
+        card.style.setProperty("--rx", "0deg");
+      });
+    });
+
+    document.querySelectorAll(".counter").forEach((counter) => {
+      const end = Number(counter.dataset.count);
+      const formatter = new Intl.NumberFormat("en-US");
+      gsap.to(counter, {
+        textContent: end,
+        duration: 2,
+        ease: "power2.out",
+        snap: { textContent: 1 },
+        onUpdate: () => { counter.textContent = formatter.format(Number(counter.textContent)); },
+        scrollTrigger: { trigger: counter, start: "top 82%", once: true }
+      });
+    });
+
+    const path = document.querySelector("#processPath");
+    const progressPath = document.querySelector("#processProgress");
+    const pulse = document.querySelector("#processPulse");
+    const steps = gsap.utils.toArray(".step-card");
+    const pathLength = path.getTotalLength();
+    progressPath.style.strokeDasharray = pathLength;
+    progressPath.style.strokeDashoffset = pathLength;
+
+    ScrollTrigger.create({
+      trigger: "#processStage",
+      start: "top 60%",
+      end: "bottom 55%",
+      scrub: 0.5,
+      onUpdate: (self) => {
+        const distance = pathLength * self.progress;
+        progressPath.style.strokeDashoffset = pathLength - distance;
+        const point = path.getPointAtLength(distance);
+        pulse.setAttribute("cx", point.x);
+        pulse.setAttribute("cy", point.y);
+        pulse.style.opacity = 1;
+        const active = Math.min(steps.length - 1, Math.floor(self.progress * steps.length));
+        steps.forEach((step, index) => step.classList.toggle("is-active", index === active));
+      }
+    });
+
+    steps.forEach((step, index) => {
+      gsap.to(step, {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#processStage",
+          start: `${8 + index * 20}% center`,
+          end: `${28 + index * 20}% center`,
+          scrub: true
+        }
+      });
+    });
+
+    gsap.to(".team", {
+      "--team-bg": "-90px",
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".team",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+      }
+    });
+
+    gsap.to(".logo-track", {
+      z: 80,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".clients",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+      }
+    });
+
+    const contactCard = document.querySelector(".contact-card");
+    if (contactCard) {
+      contactCard.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const button = event.currentTarget.querySelector("button");
+        const label = button.querySelector("[data-i18n='sendInquiry']");
+        const original = label.textContent;
+        label.textContent = document.documentElement.lang === "ar" ? "تم تجهيز الطلب" : "Inquiry queued";
+        gsap.fromTo(button, { scale: 0.98 }, { scale: 1, duration: 0.45, ease: "back.out(1.7)" });
+        window.setTimeout(() => { label.textContent = original; }, 1800);
+      });
+    }
+  </script>
+</body>
+</html>
