@@ -45,6 +45,45 @@
       color: var(--white);
     }
 
+    body.is-ar {
+      font-family: "Cairo", "Montserrat", Arial, sans-serif;
+    }
+
+    body.is-ar h1,
+    body.is-ar h2,
+    body.is-ar h3,
+    body.is-ar .button,
+    body.is-ar .eyebrow,
+    body.is-ar .nav-links,
+    body.is-ar .brand-text span,
+    body.is-ar .site-footer,
+    body.is-ar .route-metrics span,
+    body.is-ar .stat-card span {
+      letter-spacing: 0;
+    }
+
+    html[dir="rtl"] .hero-grid,
+    html[dir="rtl"] .service-panel,
+    html[dir="rtl"] .contact-strip {
+      direction: rtl;
+    }
+
+    html[dir="rtl"] .brand,
+    html[dir="rtl"] .nav-actions,
+    html[dir="rtl"] .hero-actions,
+    html[dir="rtl"] .route-metrics {
+      direction: ltr;
+    }
+
+    html[dir="rtl"] .service-list li {
+      padding: 0.9rem 2.35rem 0.9rem 0.95rem;
+    }
+
+    html[dir="rtl"] .service-list li::before {
+      left: auto;
+      right: 0.95rem;
+    }
+
     body.theme-light {
       --white: #101831;
       --muted: rgba(16, 24, 49, 0.7);
@@ -241,6 +280,9 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
       backdrop-filter: blur(18px);
       cursor: pointer;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
       transition: transform 0.35s var(--ease), background 0.35s var(--ease);
     }
 
@@ -921,17 +963,18 @@
       <span class="brand-mark" aria-hidden="true"><img src="assets/logo-nexgen.png" alt=""></span>
       <span class="brand-text">
         <strong>NEXGEN</strong>
-        <span>Logistics Solutions</span>
+        <span data-i18n="brandSubtitle">Logistics Solutions</span>
       </span>
     </a>
     <div class="nav-links">
-      <a href="index.html#about">About</a>
-      <a href="service.html" class="is-active">Services</a>
-      <a href="index.html#infrastructure">Infrastructure</a>
-      <a href="index.html#process">Process</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="index.html#about" data-i18n="navAbout">About</a>
+      <a href="service.html" class="is-active" data-i18n="navServices">Services</a>
+      <a href="index.html#infrastructure" data-i18n="navInfrastructure">Infrastructure</a>
+      <a href="index.html#process" data-i18n="navProcess">Process</a>
+      <a href="index.html#contact" data-i18n="navContact">Contact</a>
     </div>
     <div class="nav-actions">
+      <button class="toggle-btn" id="languageToggle" type="button" aria-label="Toggle Arabic language">AR</button>
       <button class="toggle-btn" id="themeToggle" type="button" aria-label="Toggle light and dark mode">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v2"/><path d="M12 19v2"/><path d="M4.22 4.22l1.42 1.42"/><path d="m18.36 18.36 1.42 1.42"/><path d="M3 12h2"/><path d="M19 12h2"/><path d="m4.22 19.78 1.42-1.42"/><path d="m18.36 5.64 1.42-1.42"/><circle cx="12" cy="12" r="4"/></svg>
       </button>
@@ -945,12 +988,12 @@
     <section class="section hero" id="top">
       <div class="section-inner hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow" data-reveal>Our Services</p>
-          <h1 data-reveal>Logistics services engineered for <span class="accent">every supply chain</span></h1>
-          <p data-reveal>At NEXGEN Logistics, we provide an extensive array of services tailored to the needs of businesses across diverse sectors. Whether you're seeking advanced warehousing, streamlined distribution, or specialized logistics, we have a solution for you.</p>
+          <p class="eyebrow" data-reveal data-i18n="heroEyebrow">Our Services</p>
+          <h1 data-reveal data-i18n="heroTitle">Logistics services engineered for <span class="accent">every supply chain</span></h1>
+          <p data-reveal data-i18n="heroText">At NEXGEN Logistics, we provide an extensive array of services tailored to the needs of businesses across diverse sectors. Whether you're seeking advanced warehousing, streamlined distribution, or specialized logistics, we have a solution for you.</p>
           <div class="hero-actions" data-reveal>
-            <a href="#services" class="button">Explore Capabilities</a>
-            <a href="index.html#contact" class="button">Contact NEXGEN</a>
+            <a href="#services" class="button" data-i18n="heroCta1">Explore Capabilities</a>
+            <a href="index.html#contact" class="button" data-i18n="heroCta2">Contact NEXGEN</a>
           </div>
         </div>
         <aside class="hero-panel" data-reveal aria-label="Service operations signal">
@@ -960,9 +1003,9 @@
             <div class="route-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17h4V5H2v12h3"/><path d="M14 8h4l4 5v4h-3"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
             <div class="route-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/></svg></div>
             <div class="route-metrics">
-              <div><strong>3PL</strong><span>Outsourced flow</span></div>
-              <div><strong>VAS</strong><span>Added value</span></div>
-              <div><strong>Global</strong><span>Freight reach</span></div>
+              <div><strong>3PL</strong><span data-i18n="metric1">Outsourced flow</span></div>
+              <div><strong>VAS</strong><span data-i18n="metric2">Added value</span></div>
+              <div><strong data-i18n="metric3Title">Global</strong><span data-i18n="metric3">Freight reach</span></div>
             </div>
           </div>
         </aside>
@@ -971,14 +1014,14 @@
 
     <section class="section overview">
       <div class="section-inner">
-        <p class="eyebrow" data-reveal>Capability Map</p>
-        <h2 data-reveal>Five connected service lanes.</h2>
+        <p class="eyebrow" data-reveal data-i18n="overviewEyebrow">Capability Map</p>
+        <h2 data-reveal data-i18n="overviewTitle">Five connected service lanes.</h2>
         <div class="overview-grid">
-          <a class="overview-card" href="#warehousing" data-reveal><span>01</span><h3>Warehousing & Inventory Management</h3></a>
-          <a class="overview-card" href="#distribution" data-reveal><span>02</span><h3>Distribution & Logistics</h3></a>
-          <a class="overview-card" href="#vas" data-reveal><span>03</span><h3>Value-Added Services</h3></a>
-          <a class="overview-card" href="#third-party" data-reveal><span>04</span><h3>Third-Party Logistics</h3></a>
-          <a class="overview-card" href="#freight" data-reveal><span>05</span><h3>Freight Forwarding</h3></a>
+          <a class="overview-card" href="#warehousing" data-reveal><span>01</span><h3 data-i18n="overview1">Warehousing & Inventory Management</h3></a>
+          <a class="overview-card" href="#distribution" data-reveal><span>02</span><h3 data-i18n="overview2">Distribution & Logistics</h3></a>
+          <a class="overview-card" href="#vas" data-reveal><span>03</span><h3 data-i18n="overview3">Value-Added Services</h3></a>
+          <a class="overview-card" href="#third-party" data-reveal><span>04</span><h3 data-i18n="overview4">Third-Party Logistics</h3></a>
+          <a class="overview-card" href="#freight" data-reveal><span>05</span><h3 data-i18n="overview5">Freight Forwarding</h3></a>
         </div>
       </div>
     </section>
@@ -988,17 +1031,17 @@
         <article class="service-panel" id="warehousing" data-reveal>
           <div class="service-head">
             <span class="service-number">01</span>
-            <h2>Warehousing & Inventory Management</h2>
-            <p>Our warehousing solutions are designed to help you manage inventory efficiently and securely.</p>
+            <h2 data-i18n="svc1Title">Warehousing & Inventory Management</h2>
+            <p data-i18n="svc1Intro">Our warehousing solutions are designed to help you manage inventory efficiently and securely.</p>
           </div>
           <div class="service-content">
             <ul class="service-list">
-              <li><strong>Ambient & Temperature-Controlled Storage:</strong> Specialized environments for everything from room temperature to ultra-cold storage.</li>
-              <li><strong>Dangerous Goods (DG) Storage:</strong> Compliant, secure storage for hazardous materials, adhering to safety regulations.</li>
-              <li><strong>Medical & Pharma Storage:</strong> Ensuring the integrity of sensitive goods with climate-controlled storage that meets pharmaceutical standards.</li>
-              <li><strong>Advanced Racking Systems:</strong> Maximize space utilization with cutting-edge racking solutions.</li>
-              <li><strong>Real-Time Inventory Tracking:</strong> Seamlessly track your stock in real-time with our advanced Warehouse Management System (WMS).</li>
-              <li><strong>Scalable Storage Solutions:</strong> Flexible storage designed to grow with your business across various sectors (FMCG, retail, industrial, etc.).</li>
+              <li data-i18n="svc1Item1"><strong>Ambient & Temperature-Controlled Storage:</strong> Specialized environments for everything from room temperature to ultra-cold storage.</li>
+              <li data-i18n="svc1Item2"><strong>Dangerous Goods (DG) Storage:</strong> Compliant, secure storage for hazardous materials, adhering to safety regulations.</li>
+              <li data-i18n="svc1Item3"><strong>Medical & Pharma Storage:</strong> Ensuring the integrity of sensitive goods with climate-controlled storage that meets pharmaceutical standards.</li>
+              <li data-i18n="svc1Item4"><strong>Advanced Racking Systems:</strong> Maximize space utilization with cutting-edge racking solutions.</li>
+              <li data-i18n="svc1Item5"><strong>Real-Time Inventory Tracking:</strong> Seamlessly track your stock in real-time with our advanced Warehouse Management System (WMS).</li>
+              <li data-i18n="svc1Item6"><strong>Scalable Storage Solutions:</strong> Flexible storage designed to grow with your business across various sectors (FMCG, retail, industrial, etc.).</li>
             </ul>
           </div>
         </article>
@@ -1010,14 +1053,14 @@
         <article class="service-panel" data-reveal>
           <div class="service-head">
             <span class="service-number">02</span>
-            <h2>Distribution & Logistics</h2>
-            <p>Our logistics services ensure the safe, timely, and efficient delivery of your products.</p>
+            <h2 data-i18n="svc2Title">Distribution & Logistics</h2>
+            <p data-i18n="svc2Intro">Our logistics services ensure the safe, timely, and efficient delivery of your products.</p>
           </div>
           <div class="service-content">
             <ul class="service-list">
-              <li><strong>Last-Mile Delivery:</strong> We provide fast, reliable last-mile solutions designed to exceed customer expectations.</li>
-              <li><strong>Cross-Docking & Transshipment:</strong> Minimize storage time with efficient goods transfer, speeding up your supply chain.</li>
-              <li><strong>Route Optimization & Fleet Management:</strong> Our fleet management solutions ensure cost-effective deliveries and maximize fleet utilization.</li>
+              <li data-i18n="svc2Item1"><strong>Last-Mile Delivery:</strong> We provide fast, reliable last-mile solutions designed to exceed customer expectations.</li>
+              <li data-i18n="svc2Item2"><strong>Cross-Docking & Transshipment:</strong> Minimize storage time with efficient goods transfer, speeding up your supply chain.</li>
+              <li data-i18n="svc2Item3"><strong>Route Optimization & Fleet Management:</strong> Our fleet management solutions ensure cost-effective deliveries and maximize fleet utilization.</li>
             </ul>
           </div>
         </article>
@@ -1029,15 +1072,15 @@
         <article class="service-panel" data-reveal>
           <div class="service-head">
             <span class="service-number">03</span>
-            <h2>Value-Added Services (VAS)</h2>
-            <p>We enhance the efficiency of your supply chain with additional services that add value at every stage.</p>
+            <h2 data-i18n="svc3Title">Value-Added Services (VAS)</h2>
+            <p data-i18n="svc3Intro">We enhance the efficiency of your supply chain with additional services that add value at every stage.</p>
           </div>
           <div class="service-content">
             <ul class="service-list">
-              <li><strong>E-Commerce Fulfillment & Marketplace Integration:</strong> Seamless integration with platforms like Shopify, ensuring efficient order fulfillment and returns management.</li>
-              <li><strong>Packaging, Labeling & Kitting:</strong> Custom packaging solutions that ensure your products are retail-ready and compliant with industry standards.</li>
-              <li><strong>Assembly & Quality Inspection:</strong> We provide assembly and quality control to ensure your products are market-ready.</li>
-              <li><strong>Returns Management & Refurbishing:</strong> Comprehensive reverse logistics services, including returns processing, refurbishing, and recycling.</li>
+              <li data-i18n="svc3Item1"><strong>E-Commerce Fulfillment & Marketplace Integration:</strong> Seamless integration with platforms like Shopify, ensuring efficient order fulfillment and returns management.</li>
+              <li data-i18n="svc3Item2"><strong>Packaging, Labeling & Kitting:</strong> Custom packaging solutions that ensure your products are retail-ready and compliant with industry standards.</li>
+              <li data-i18n="svc3Item3"><strong>Assembly & Quality Inspection:</strong> We provide assembly and quality control to ensure your products are market-ready.</li>
+              <li data-i18n="svc3Item4"><strong>Returns Management & Refurbishing:</strong> Comprehensive reverse logistics services, including returns processing, refurbishing, and recycling.</li>
             </ul>
           </div>
         </article>
@@ -1049,14 +1092,14 @@
         <article class="service-panel" data-reveal>
           <div class="service-head">
             <span class="service-number">04</span>
-            <h2>Third-Party Logistics (3PL)</h2>
-            <p>End-to-end logistics solutions that integrate with your supply chain, providing a complete outsourced 3PL service.</p>
+            <h2 data-i18n="svc4Title">Third-Party Logistics (3PL)</h2>
+            <p data-i18n="svc4Intro">End-to-end logistics solutions that integrate with your supply chain, providing a complete outsourced 3PL service.</p>
           </div>
           <div class="service-content">
             <ul class="service-list">
-              <li><strong>End-to-End Supply Chain Management:</strong> From procurement to final delivery, we manage every step of your logistics needs, offering seamless service.</li>
-              <li><strong>Customs Clearance & Trade Compliance:</strong> Expertly handling import/export documentation and ensuring smooth cross-border movement.</li>
-              <li><strong>Project Cargo Handling & Specialized Services:</strong> Safe and efficient transportation of oversized, heavy, or industrial cargo.</li>
+              <li data-i18n="svc4Item1"><strong>End-to-End Supply Chain Management:</strong> From procurement to final delivery, we manage every step of your logistics needs, offering seamless service.</li>
+              <li data-i18n="svc4Item2"><strong>Customs Clearance & Trade Compliance:</strong> Expertly handling import/export documentation and ensuring smooth cross-border movement.</li>
+              <li data-i18n="svc4Item3"><strong>Project Cargo Handling & Specialized Services:</strong> Safe and efficient transportation of oversized, heavy, or industrial cargo.</li>
             </ul>
           </div>
         </article>
@@ -1068,13 +1111,13 @@
         <article class="service-panel" data-reveal>
           <div class="service-head">
             <span class="service-number">05</span>
-            <h2>Freight Forwarding & International Logistics</h2>
-            <p>Expand your reach globally with our comprehensive freight forwarding solutions.</p>
+            <h2 data-i18n="svc5Title">Freight Forwarding & International Logistics</h2>
+            <p data-i18n="svc5Intro">Expand your reach globally with our comprehensive freight forwarding solutions.</p>
           </div>
           <div class="service-content">
             <ul class="service-list">
-              <li><strong>Multimodal Freight Forwarding:</strong> Whether by air, sea, road, or rail, we provide efficient, reliable solutions for your international logistics.</li>
-              <li><strong>International Customs Brokerage:</strong> We manage import/export documentation, ensuring full compliance with international trade regulations.</li>
+              <li data-i18n="svc5Item1"><strong>Multimodal Freight Forwarding:</strong> Whether by air, sea, road, or rail, we provide efficient, reliable solutions for your international logistics.</li>
+              <li data-i18n="svc5Item2"><strong>International Customs Brokerage:</strong> We manage import/export documentation, ensuring full compliance with international trade regulations.</li>
             </ul>
           </div>
         </article>
@@ -1083,13 +1126,13 @@
 
     <section class="section stats">
       <div class="section-inner">
-        <p class="eyebrow" data-reveal>Operational Advantage</p>
-        <h2 data-reveal>Built for secure, scalable movement.</h2>
+        <p class="eyebrow" data-reveal data-i18n="statsEyebrow">Operational Advantage</p>
+        <h2 data-reveal data-i18n="statsTitle">Built for secure, scalable movement.</h2>
         <div class="stats-grid">
-          <div class="stat-card" data-reveal><strong>WMS</strong><span>Real-time stock visibility</span></div>
-          <div class="stat-card" data-reveal><strong>DG</strong><span>Compliant dangerous goods storage</span></div>
-          <div class="stat-card" data-reveal><strong>3PL</strong><span>Complete outsourced logistics</span></div>
-          <div class="stat-card" data-reveal><strong>Global</strong><span>Air, sea, road, and rail forwarding</span></div>
+          <div class="stat-card" data-reveal><strong>WMS</strong><span data-i18n="stat1">Real-time stock visibility</span></div>
+          <div class="stat-card" data-reveal><strong>DG</strong><span data-i18n="stat2">Compliant dangerous goods storage</span></div>
+          <div class="stat-card" data-reveal><strong>3PL</strong><span data-i18n="stat3">Complete outsourced logistics</span></div>
+          <div class="stat-card" data-reveal><strong data-i18n="stat4Title">Global</strong><span data-i18n="stat4">Air, sea, road, and rail forwarding</span></div>
         </div>
       </div>
     </section>
@@ -1099,10 +1142,10 @@
         <div class="contact-strip" data-reveal>
           <div>
             <p class="eyebrow">NEXGEN Logistics Solutions</p>
-            <h2>Ready to engineer your next logistics flow?</h2>
-            <p>Connect with NEXGEN for warehousing, distribution, VAS, 3PL, and international freight forwarding.</p>
+            <h2 data-i18n="contactTitle">Ready to engineer your next logistics flow?</h2>
+            <p data-i18n="contactText">Connect with NEXGEN for warehousing, distribution, VAS, 3PL, and international freight forwarding.</p>
           </div>
-          <a class="button" href="index.html#contact">Contact Us</a>
+          <a class="button" href="index.html#contact" data-i18n="contactCta">Contact Us</a>
         </div>
       </div>
     </section>
@@ -1110,6 +1153,7 @@
 
   <footer class="site-footer">
     <span>NEXGEN Logistics Solutions</span>
+    <span>Info@nexgenlogisolutions.com</span>
     <span>www.nexgenlogisolutions.com</span>
   </footer>
 
@@ -1137,6 +1181,148 @@
       nav.classList.toggle("is-scrolled", window.scrollY > 30);
     }, { passive: true });
 
+    const translations = {
+      en: {
+        brandSubtitle: "Logistics Solutions",
+        navAbout: "About",
+        navServices: "Services",
+        navInfrastructure: "Infrastructure",
+        navProcess: "Process",
+        navContact: "Contact",
+        heroEyebrow: "Our Services",
+        heroTitle: "Logistics services engineered for <span class=\"accent\">every supply chain</span>",
+        heroText: "At NEXGEN Logistics, we provide an extensive array of services tailored to the needs of businesses across diverse sectors. Whether you're seeking advanced warehousing, streamlined distribution, or specialized logistics, we have a solution for you.",
+        heroCta1: "Explore Capabilities",
+        heroCta2: "Contact NEXGEN",
+        metric1: "Outsourced flow",
+        metric2: "Added value",
+        metric3Title: "Global",
+        metric3: "Freight reach",
+        overviewEyebrow: "Capability Map",
+        overviewTitle: "Five connected service lanes.",
+        overview1: "Warehousing & Inventory Management",
+        overview2: "Distribution & Logistics",
+        overview3: "Value-Added Services",
+        overview4: "Third-Party Logistics",
+        overview5: "Freight Forwarding",
+        svc1Title: "Warehousing & Inventory Management",
+        svc1Intro: "Our warehousing solutions are designed to help you manage inventory efficiently and securely.",
+        svc1Item1: "<strong>Ambient & Temperature-Controlled Storage:</strong> Specialized environments for everything from room temperature to ultra-cold storage.",
+        svc1Item2: "<strong>Dangerous Goods (DG) Storage:</strong> Compliant, secure storage for hazardous materials, adhering to safety regulations.",
+        svc1Item3: "<strong>Medical & Pharma Storage:</strong> Ensuring the integrity of sensitive goods with climate-controlled storage that meets pharmaceutical standards.",
+        svc1Item4: "<strong>Advanced Racking Systems:</strong> Maximize space utilization with cutting-edge racking solutions.",
+        svc1Item5: "<strong>Real-Time Inventory Tracking:</strong> Seamlessly track your stock in real-time with our advanced Warehouse Management System (WMS).",
+        svc1Item6: "<strong>Scalable Storage Solutions:</strong> Flexible storage designed to grow with your business across various sectors (FMCG, retail, industrial, etc.).",
+        svc2Title: "Distribution & Logistics",
+        svc2Intro: "Our logistics services ensure the safe, timely, and efficient delivery of your products.",
+        svc2Item1: "<strong>Last-Mile Delivery:</strong> We provide fast, reliable last-mile solutions designed to exceed customer expectations.",
+        svc2Item2: "<strong>Cross-Docking & Transshipment:</strong> Minimize storage time with efficient goods transfer, speeding up your supply chain.",
+        svc2Item3: "<strong>Route Optimization & Fleet Management:</strong> Our fleet management solutions ensure cost-effective deliveries and maximize fleet utilization.",
+        svc3Title: "Value-Added Services (VAS)",
+        svc3Intro: "We enhance the efficiency of your supply chain with additional services that add value at every stage.",
+        svc3Item1: "<strong>E-Commerce Fulfillment & Marketplace Integration:</strong> Seamless integration with platforms like Shopify, ensuring efficient order fulfillment and returns management.",
+        svc3Item2: "<strong>Packaging, Labeling & Kitting:</strong> Custom packaging solutions that ensure your products are retail-ready and compliant with industry standards.",
+        svc3Item3: "<strong>Assembly & Quality Inspection:</strong> We provide assembly and quality control to ensure your products are market-ready.",
+        svc3Item4: "<strong>Returns Management & Refurbishing:</strong> Comprehensive reverse logistics services, including returns processing, refurbishing, and recycling.",
+        svc4Title: "Third-Party Logistics (3PL)",
+        svc4Intro: "End-to-end logistics solutions that integrate with your supply chain, providing a complete outsourced 3PL service.",
+        svc4Item1: "<strong>End-to-End Supply Chain Management:</strong> From procurement to final delivery, we manage every step of your logistics needs, offering seamless service.",
+        svc4Item2: "<strong>Customs Clearance & Trade Compliance:</strong> Expertly handling import/export documentation and ensuring smooth cross-border movement.",
+        svc4Item3: "<strong>Project Cargo Handling & Specialized Services:</strong> Safe and efficient transportation of oversized, heavy, or industrial cargo.",
+        svc5Title: "Freight Forwarding & International Logistics",
+        svc5Intro: "Expand your reach globally with our comprehensive freight forwarding solutions.",
+        svc5Item1: "<strong>Multimodal Freight Forwarding:</strong> Whether by air, sea, road, or rail, we provide efficient, reliable solutions for your international logistics.",
+        svc5Item2: "<strong>International Customs Brokerage:</strong> We manage import/export documentation, ensuring full compliance with international trade regulations.",
+        statsEyebrow: "Operational Advantage",
+        statsTitle: "Built for secure, scalable movement.",
+        stat1: "Real-time stock visibility",
+        stat2: "Compliant dangerous goods storage",
+        stat3: "Complete outsourced logistics",
+        stat4Title: "Global",
+        stat4: "Air, sea, road, and rail forwarding",
+        contactTitle: "Ready to engineer your next logistics flow?",
+        contactText: "Connect with NEXGEN for warehousing, distribution, VAS, 3PL, and international freight forwarding.",
+        contactCta: "Contact Us"
+      },
+      ar: {
+        brandSubtitle: "حلول لوجستية",
+        navAbout: "عن الشركة",
+        navServices: "الخدمات",
+        navInfrastructure: "البنية",
+        navProcess: "الرحلة",
+        navContact: "تواصل",
+        heroEyebrow: "خدماتنا",
+        heroTitle: "خدمات لوجستية مصممة <span class=\"accent\">لكل سلسلة إمداد</span>",
+        heroText: "في NEXGEN Logistics، نقدم مجموعة واسعة من الخدمات المصممة لتلبية احتياجات الشركات عبر قطاعات متنوعة. سواء كنت تبحث عن تخزين متقدم أو توزيع سلس أو لوجستيات متخصصة، لدينا الحل المناسب لك.",
+        heroCta1: "استكشف القدرات",
+        heroCta2: "تواصل مع نكسجن",
+        metric1: "تدفق خارجي",
+        metric2: "قيمة مضافة",
+        metric3Title: "عالمي",
+        metric3: "نطاق الشحن",
+        overviewEyebrow: "خريطة القدرات",
+        overviewTitle: "خمسة مسارات خدمات متصلة.",
+        overview1: "التخزين وإدارة المخزون",
+        overview2: "التوزيع والخدمات اللوجستية",
+        overview3: "خدمات القيمة المضافة",
+        overview4: "الخدمات اللوجستية للطرف الثالث",
+        overview5: "الشحن الدولي",
+        svc1Title: "التخزين وإدارة المخزون",
+        svc1Intro: "تم تصميم حلول التخزين لدينا لمساعدتك على إدارة المخزون بكفاءة وأمان.",
+        svc1Item1: "<strong>التخزين العادي والمتحكم بالحرارة:</strong> بيئات متخصصة لكل شيء من درجة حرارة الغرفة إلى التخزين فائق البرودة.",
+        svc1Item2: "<strong>تخزين المواد الخطرة DG:</strong> تخزين آمن ومتوافق للمواد الخطرة وفقا للوائح السلامة.",
+        svc1Item3: "<strong>التخزين الطبي والدوائي:</strong> الحفاظ على سلامة البضائع الحساسة عبر تخزين متحكم بالمناخ يلبي المعايير الدوائية.",
+        svc1Item4: "<strong>أنظمة رفوف متقدمة:</strong> تعظيم استغلال المساحة من خلال حلول رفوف حديثة.",
+        svc1Item5: "<strong>تتبع المخزون في الوقت الفعلي:</strong> تتبع مخزونك بسلاسة عبر نظام إدارة المستودعات WMS.",
+        svc1Item6: "<strong>حلول تخزين قابلة للتوسع:</strong> تخزين مرن ينمو مع أعمالك عبر قطاعات متعددة مثل FMCG والتجزئة والصناعة.",
+        svc2Title: "التوزيع والخدمات اللوجستية",
+        svc2Intro: "تضمن خدماتنا اللوجستية التسليم الآمن وفي الوقت المحدد وبكفاءة لمنتجاتك.",
+        svc2Item1: "<strong>توصيل الميل الأخير:</strong> نقدم حلولا سريعة وموثوقة للميل الأخير مصممة لتجاوز توقعات العملاء.",
+        svc2Item2: "<strong>Cross-Docking وإعادة الشحن:</strong> تقليل وقت التخزين عبر نقل فعال للبضائع وتسريع سلسلة الإمداد.",
+        svc2Item3: "<strong>تحسين المسارات وإدارة الأسطول:</strong> تضمن حلول إدارة الأسطول لدينا تسليمات فعالة من حيث التكلفة وتعظيم استخدام الأسطول.",
+        svc3Title: "خدمات القيمة المضافة (VAS)",
+        svc3Intro: "نعزز كفاءة سلسلة الإمداد من خلال خدمات إضافية تضيف قيمة في كل مرحلة.",
+        svc3Item1: "<strong>تنفيذ التجارة الإلكترونية وتكامل الأسواق:</strong> تكامل سلس مع منصات مثل Shopify لضمان تنفيذ الطلبات وإدارة المرتجعات بكفاءة.",
+        svc3Item2: "<strong>التعبئة والوسم والتجهيز:</strong> حلول تعبئة مخصصة تضمن جاهزية منتجاتك للبيع والامتثال لمعايير القطاع.",
+        svc3Item3: "<strong>التجميع وفحص الجودة:</strong> نقدم خدمات التجميع ومراقبة الجودة لضمان جاهزية المنتجات للسوق.",
+        svc3Item4: "<strong>إدارة المرتجعات والتجديد:</strong> خدمات لوجستية عكسية شاملة تشمل معالجة المرتجعات والتجديد وإعادة التدوير.",
+        svc4Title: "الخدمات اللوجستية للطرف الثالث (3PL)",
+        svc4Intro: "حلول لوجستية من البداية للنهاية تتكامل مع سلسلة الإمداد وتوفر خدمة 3PL كاملة بالاستعانة بمصدر خارجي.",
+        svc4Item1: "<strong>إدارة سلسلة الإمداد من البداية للنهاية:</strong> من التوريد إلى التسليم النهائي، ندير كل خطوة من احتياجاتك اللوجستية بخدمة سلسة.",
+        svc4Item2: "<strong>التخليص الجمركي والامتثال التجاري:</strong> إدارة وثائق الاستيراد والتصدير باحتراف وضمان حركة سلسة عبر الحدود.",
+        svc4Item3: "<strong>شحن المشاريع والخدمات المتخصصة:</strong> نقل آمن وفعال للشحنات الضخمة أو الثقيلة أو الصناعية.",
+        svc5Title: "الشحن الدولي والخدمات اللوجستية العالمية",
+        svc5Intro: "وسع نطاقك عالميا من خلال حلول الشحن الدولي الشاملة.",
+        svc5Item1: "<strong>الشحن متعدد الوسائط:</strong> سواء جوا أو بحرا أو برا أو بالسكك، نقدم حلولا فعالة وموثوقة للوجستيات الدولية.",
+        svc5Item2: "<strong>الوساطة الجمركية الدولية:</strong> ندير وثائق الاستيراد والتصدير مع ضمان الامتثال الكامل للوائح التجارة الدولية.",
+        statsEyebrow: "ميزة تشغيلية",
+        statsTitle: "مصمم لحركة آمنة وقابلة للتوسع.",
+        stat1: "رؤية فورية للمخزون",
+        stat2: "تخزين متوافق للمواد الخطرة",
+        stat3: "خدمات لوجستية كاملة بالاستعانة بمصدر خارجي",
+        stat4Title: "عالمي",
+        stat4: "شحن جوي وبحري وبري وسككي",
+        contactTitle: "جاهز لتصميم تدفقك اللوجستي القادم؟",
+        contactText: "تواصل مع NEXGEN لخدمات التخزين والتوزيع وVAS و3PL والشحن الدولي.",
+        contactCta: "تواصل معنا"
+      }
+    };
+
+    const languageToggle = document.querySelector("#languageToggle");
+    const applyLanguage = (lang) => {
+      const copy = translations[lang];
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      document.body.classList.toggle("is-ar", lang === "ar");
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.dataset.i18n;
+        if (copy[key]) element.innerHTML = copy[key];
+      });
+      languageToggle.textContent = lang === "ar" ? "EN" : "AR";
+      localStorage.setItem("nexgen-service-lang", lang);
+      ScrollTrigger.refresh();
+    };
+
     const themeToggle = document.querySelector("#themeToggle");
     const applyTheme = (theme) => {
       const light = theme === "light";
@@ -1144,7 +1330,11 @@
       themeToggle.setAttribute("aria-label", light ? "Switch to dark mode" : "Switch to light mode");
       localStorage.setItem("nexgen-theme", theme);
     };
+    applyLanguage(localStorage.getItem("nexgen-service-lang") || localStorage.getItem("nexgen-lang") || "en");
     applyTheme(localStorage.getItem("nexgen-theme") || "dark");
+    languageToggle.addEventListener("click", () => {
+      applyLanguage(document.documentElement.lang === "ar" ? "en" : "ar");
+    });
     themeToggle.addEventListener("click", () => {
       applyTheme(document.body.classList.contains("theme-light") ? "dark" : "light");
     });
